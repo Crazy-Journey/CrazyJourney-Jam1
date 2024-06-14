@@ -354,3 +354,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   objectTr: {fileID: 2439380682940072829}
+  objectRb: {fileID: 1084216011251414985}
