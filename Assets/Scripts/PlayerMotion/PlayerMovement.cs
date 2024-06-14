@@ -11,10 +11,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Rigidbody2D objectRb;
 
-    // Update is called once per frame
+
     void Update()
     {
-        print(movementInput);
         objectRb.velocity = new Vector3(movementInput.x * speed, objectRb.velocity.y, 0f);
     }
 
