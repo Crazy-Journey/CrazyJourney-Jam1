@@ -36,8 +36,9 @@ public class BulletComponent : MonoBehaviour
         print("aaa");
         if (collision.gameObject != owner)
         {
-            if(collision.gameObject.layer != LayerMask.NameToLayer("Floor") &&
-                myRb.velocity.y >=0)
+            if(collision.gameObject.layer != LayerMask.NameToLayer("Floor") ||
+                (collision.gameObject.layer == LayerMask.NameToLayer("Floor") &&
+                myRb.velocity.y <=0))
             {
                 Destroy(gameObject);
             }
