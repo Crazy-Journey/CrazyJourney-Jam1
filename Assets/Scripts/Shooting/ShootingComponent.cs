@@ -39,6 +39,7 @@ public class ShootingComponent : MonoBehaviour
 
             GameObject newBullet = Instantiate(bulletPrefab, myTransform.position, Quaternion.identity);
             newBullet.GetComponent<BulletComponent>().setVelocity(shootDir);
+            newBullet.GetComponent<BulletComponent>().setOwner(gameObject);
 
         }
     }

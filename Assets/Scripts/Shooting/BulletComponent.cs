@@ -8,22 +8,40 @@ public class BulletComponent : MonoBehaviour
 
     private Rigidbody2D myRb;
 
+    private GameObject owner;
 
     private void Awake()
     {
         myRb = GetComponent<Rigidbody2D>();
-
     }
 
     public void setVelocity(Vector2 velocity)
     {
-        Debug.Log("aaaaaaaaa");
         myRb.velocity = velocity.normalized * speed;
-        Debug.Log(myRb.velocity);
     }
 
     public void setVelocity(Vector2 velocity,float customSpeed)
     {
         myRb.velocity = velocity.normalized * customSpeed;
     }
+
+
+    public void setOwner(GameObject _owner)
+    {
+        owner = _owner; 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("aaa");
+        if (collision.gameObject != owner)
+        {
+            if(collision.gameObject.layer != LayerMask.NameToLayer("Floor") &&
+                myRb.velocity.y >=0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+  
 }
