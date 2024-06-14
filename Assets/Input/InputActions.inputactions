@@ -26,28 +26,11 @@
                     "action": "aaa",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Player2",
-            "id": "1f806213-0dde-4315-9791-cbc9e1d197c6",
-            "actions": [
-                {
-                    "name": "aaa",
-                    "type": "Button",
-                    "id": "853016c2-c188-4427-9092-f8bd532151e0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "d70806f4-f31e-4db1-aefe-1acb30c5949e",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "bece5a25-71e9-49e3-b5b9-846f915624ca",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
