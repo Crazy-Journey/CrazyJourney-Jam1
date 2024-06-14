@@ -1,5 +1,5 @@
 {
-    "name": "Crazy Journey Jam1",
+    "name": "InputActions",
     "maps": [
         {
             "name": "Player",
@@ -30,7 +30,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
