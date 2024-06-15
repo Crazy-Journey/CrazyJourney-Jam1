@@ -32,7 +32,7 @@ public class LifeComponent : MonoBehaviour
     public void ReciveDamage(float damage, GameObject bulletOwner)
     {
         currentLife -= damage;
-        //hpBar.UpdateBar(currentLife, maxlife);
+        hpBar.UpdateBar(currentLife, maxlife);
 
         if (currentLife <= 0)
         {
@@ -63,7 +63,11 @@ public class LifeComponent : MonoBehaviour
 
         if(type == EntityType.Enemy)
         {
-            // LE DAMOS NUESTRO DROP AL JUGADOR QUE NOS HA MATADO // TO DO
+            int bulletOwnerId = bulletOwner.GetComponentInChildren<PlayerId>().GetPlayerId();
+
+            // LE DAMOS NUESTRO DROP AL JUGADOR QUE NOS HA MATADO //
+            PlayerDataManager.THIS.GetPlayer(bulletOwnerId).ChangePower(+manager.powerDrop);
+            PlayerDataManager.THIS.GetPlayer(bulletOwnerId).ChangeCoins(+manager.coinDrop);
             Destroy(gameObject);
         }
 

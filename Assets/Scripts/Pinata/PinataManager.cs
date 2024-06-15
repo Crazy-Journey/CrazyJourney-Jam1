@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class PinataManager : MonoBehaviour
 {
-    [SerializeField] private int xpDrop, coinDrop;
-
-    private void Update()
-    {
-        
-    }
-
-    void Award()
-    {
+    [SerializeField] public int powerDrop, coinDrop;
 
     }
 
