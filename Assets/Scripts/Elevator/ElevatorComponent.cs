@@ -14,14 +14,13 @@ public class ElevatorComponent : MonoBehaviour
     [SerializeField]
     private int Nfloors;
 
-    [SerializeField]
+
     private List<int> floorCosts = new List<int>();
 
     [SerializeField]
     [Tooltip("Objeto que contiene todos los pisos(deben estar en orden)")]
     private Transform PisosContainer;
 
-    [SerializeField]
     private List<Piso> pisos = new List<Piso>();
 
 
@@ -29,7 +28,8 @@ public class ElevatorComponent : MonoBehaviour
 
     [Header("Raycast")]
 
- 
+    [SerializeField]
+    private bool IsLeft;
 
     [SerializeField]
     private Transform RaycastOrigin;
@@ -84,8 +84,9 @@ public class ElevatorComponent : MonoBehaviour
     void Start()
     {
 
+        RaycastDir = IsLeft ? new Vector2(-1, 0) : new Vector2(1, 0);
 
-
+ 
         for (int i = 0;i < Nfloors; i++)
         {
             floorCosts.Add(FormulaEscalado(i));
@@ -96,7 +97,7 @@ public class ElevatorComponent : MonoBehaviour
         {
             if( PisosContainer.childCount <= i)
             {
-                continue;
+                break;
             }
 
             pisos.Add(PisosContainer.GetChild(i).gameObject.GetComponent<Piso>());

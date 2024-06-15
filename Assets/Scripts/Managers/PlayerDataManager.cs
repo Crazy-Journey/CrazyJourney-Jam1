@@ -72,6 +72,17 @@ public class PlayerDataManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        playerData1.SetPower(0);
+        playerData1.SetCoins(0);
+        playerData1.SetPiso(0);
+
+        playerData2.SetPower(0);
+        playerData2.SetCoins(0);
+        playerData2.SetPiso(0);
+    }
+
     public ref PlayerData Player1()
     {
         return ref playerData1;
