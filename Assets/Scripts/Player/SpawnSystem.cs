@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class SpawnSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] Transform objectTr;
+
+
     void Start()
     {
         
@@ -15,4 +17,6 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+
 }
