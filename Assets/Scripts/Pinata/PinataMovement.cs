@@ -11,8 +11,6 @@ public class PinataMovement : MonoBehaviour
 
     [SerializeField] Rigidbody2D objectRb;
 
-    private bool bounced = false;
-
     Vector2 moveDirection = new Vector2(0f, 0f);
 
 
@@ -48,7 +46,6 @@ public class PinataMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("storyFloorH"))
         {
-            Debug.Log("ouchH");
             Vector2 bounceDirection = new Vector2(0f, 0f);
 
             if (collision.gameObject.transform.position.y > transform.position.y)
@@ -62,7 +59,6 @@ public class PinataMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("storyFloorV"))
         {
-            Debug.Log("ouchV");
             Vector2 bounceDirection = new Vector2(0f, 0f);
 
             if (collision.gameObject.transform.position.x > transform.position.x)
