@@ -265,6 +265,7 @@ MonoBehaviour:
   hpBar: {fileID: 0}
   playerId: {fileID: 2839472815869267500}
   playerAnimations: {fileID: 6547147584867639825}
+  actionMapContainer: {fileID: 5032199304777654181}
 --- !u!1 &3762668272761809257
 GameObject:
   m_ObjectHideFlags: 0
