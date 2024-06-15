@@ -14,9 +14,9 @@ public class PlayerDataManager : MonoBehaviour
 
     public struct PlayerData
     {
-        public float _power;
-        public int _coins;
-        public int _piso;
+        private float _power;
+        private int _coins;
+        private int _piso;
 
         public void SetPower(float power)
         {
