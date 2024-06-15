@@ -24,6 +24,12 @@ public class LifeComponent : MonoBehaviour
 
     private PinataManager manager;
 
+
+    public void setMaxLife(float _maxlife)
+    {
+       maxlife = _maxlife;
+    }
+
     private void Start()
     {
         currentLife = maxlife;
