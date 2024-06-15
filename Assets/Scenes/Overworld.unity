@@ -576,6 +576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P2Hud
       objectReference: {fileID: 0}
+    - target: {fileID: 4486111845034034680, guid: ce32b4e466c0dc8438adcc0adfd02a3d, type: 3}
+      propertyPath: m_Name
+      value: P2HPBar
+      objectReference: {fileID: 0}
     - target: {fileID: 7017198060897754003, guid: ce32b4e466c0dc8438adcc0adfd02a3d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
