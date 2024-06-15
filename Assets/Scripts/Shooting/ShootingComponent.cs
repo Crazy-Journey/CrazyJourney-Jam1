@@ -61,6 +61,7 @@ public class ShootingComponent : MonoBehaviour
                 VisualElement.flipX ? new Vector2(-1,0) :
                 new Vector2(1,0));
 
+            //print(shootDir);
 
             newBullet.GetComponent<BulletComponent>().setOwner(OwnerObject);
             newBullet.GetComponent<BulletComponent>().setDamage(bulletDamage);
@@ -77,7 +78,10 @@ public class ShootingComponent : MonoBehaviour
 
     public void Look(InputAction.CallbackContext context)
     {
-        shootDir = context.ReadValue<Vector2>();
+        if(context.ReadValue<Vector2>() != new Vector2(0, 0))
+        {
+            shootDir = context.ReadValue<Vector2>();
+        }
     }
 
     public void SetBulletDamage(float dmg)
