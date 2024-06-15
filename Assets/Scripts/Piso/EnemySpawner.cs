@@ -16,6 +16,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float spawnHeight;
 
+    [SerializeField]
+    private int maxEnemies;
+
     [Header("Stats")]
     [SerializeField]
     private float enemyLife;
@@ -37,6 +40,8 @@ public class EnemySpawner : MonoBehaviour
     private float elapsedTime = 0;
 
 
+    //contator de enemigos
+    private int enemiesCount = 0;   
 
     // Update is called once per frame
     void Update()
@@ -44,11 +49,16 @@ public class EnemySpawner : MonoBehaviour
         spawnEnemies();
     }
 
+    public void PinataDied()
+    {
+        enemiesCount--;
+    }
+
     private void spawnEnemies()
     {
         elapsedTime += Time.deltaTime;
 
-        if(elapsedTime > spawnRate)
+        if(elapsedTime > spawnRate && enemiesCount < maxEnemies)
         {
             elapsedTime = 0;
             //generate enemy
@@ -62,6 +72,12 @@ public class EnemySpawner : MonoBehaviour
             newEnemy.GetComponent<PinataManager>().powerDrop = enemyPowerDrop;
 
             newEnemy.GetComponent<PinataMovement>().setSpeed(enemySpeed);
+
+
+            newEnemy.GetComponent<PinataManager>().setSpawner(this);
+
+
+            enemiesCount++;
 
         }
         
