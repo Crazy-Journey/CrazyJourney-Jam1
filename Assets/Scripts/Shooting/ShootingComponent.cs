@@ -80,5 +80,9 @@ public class ShootingComponent : MonoBehaviour
         shootDir = context.ReadValue<Vector2>();
     }
 
+    public void SetBulletDamage(float dmg)
+    {
+        bulletDamage = dmg;
+    }
 
 }

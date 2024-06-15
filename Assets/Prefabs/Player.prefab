@@ -260,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLife: 5
   maxlife: 5
+  lifeRegen: 0
   type: 0
   hpBar: {fileID: 0}
 --- !u!1 &3762668272761809257
@@ -540,6 +541,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce030f38f7ad2d4da0371fdaffff444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  maxLife: 0
+  lifeRegen: 0
+  playerId: {fileID: 2839472815869267500}
+  lifeComponent: {fileID: 4870753596663745493}
+  shootingComponent: {fileID: 8565587844585137252}
 --- !u!1 &6916542751146496361
 GameObject:
   m_ObjectHideFlags: 0
