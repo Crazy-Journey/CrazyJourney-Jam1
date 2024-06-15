@@ -24,6 +24,15 @@ public class ShootingComponent : MonoBehaviour
     [SerializeField]
     private float bulletDamage;
 
+    [SerializeField]
+    [Tooltip("El objeto que lleva el collider")]
+    private GameObject OwnerObject;
+
+
+    [SerializeField]
+    private Transform SpawnPoint;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +50,9 @@ public class ShootingComponent : MonoBehaviour
 
             elapsedTime = 0;
 
-            GameObject newBullet = Instantiate(bulletPrefab, myTransform.position, Quaternion.identity);
+            GameObject newBullet = Instantiate(bulletPrefab, SpawnPoint.position, Quaternion.identity);
             newBullet.GetComponent<BulletComponent>().setVelocity(shootDir);
-            newBullet.GetComponent<BulletComponent>().setOwner(gameObject);
+            newBullet.GetComponent<BulletComponent>().setOwner(OwnerObject);
             newBullet.GetComponent<BulletComponent>().setDamage(bulletDamage);
 
         }
