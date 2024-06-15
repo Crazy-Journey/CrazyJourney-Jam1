@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerDrop: 3
-  coinDrop: 3
+  coinDrop: 0
 --- !u!114 &5918636204747359084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,5 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLife: 3
   maxlife: 3
+  lifeRegen: 0
   type: 1
   hpBar: {fileID: 6812390292557943088}
+  playerId: {fileID: 0}
