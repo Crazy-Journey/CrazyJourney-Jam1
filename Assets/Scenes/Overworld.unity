@@ -341,10 +341,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContenedorPisos
       objectReference: {fileID: 0}
-    - target: {fileID: 365607787642834932, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
-      propertyPath: m_TagString
-      value: ContenedorPisos
-      objectReference: {fileID: 0}
     - target: {fileID: 6451926190790127443, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
