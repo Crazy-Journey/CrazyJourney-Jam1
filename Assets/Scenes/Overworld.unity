@@ -319,6 +319,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2723299040772014566, guid: 20998b22932815847b8a92665eca539c, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3229353401883505786, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -374,6 +378,10 @@ PrefabInstance:
     - target: {fileID: 4719896140001842626, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735101566025804490, guid: 20998b22932815847b8a92665eca539c, type: 3}
+      propertyPath: orthographic size
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5773530973652729720, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: m_AnchorMax.x
