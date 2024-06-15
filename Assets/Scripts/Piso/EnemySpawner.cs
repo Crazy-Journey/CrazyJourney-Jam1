@@ -111,4 +111,16 @@ public class EnemySpawner : MonoBehaviour
 
         return pos;
     }
+
+    public void InsertData(PisosData.DataEnemy dataEnemy)
+    {
+        maxEnemies = dataEnemy.maxEnemies;
+        enemyLife = dataEnemy.life; 
+        enemySpeed = dataEnemy.speed;
+        enemyCoinDrop = dataEnemy.coinDrop;
+        enemyPowerDrop = dataEnemy.powerDrop;
+
+        minSpawnRate = dataEnemy.minSpawnRate;
+        maxSpawnRate = dataEnemy.maxSpawnRate;
+    }
 }

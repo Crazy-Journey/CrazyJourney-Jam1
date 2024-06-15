@@ -18,7 +18,7 @@ public class CameraTarget : MonoBehaviour
         contenedorPisos = GameObject.FindGameObjectWithTag("ContenedorPisos").transform;
 
 
-        for (int i = 0; i < contenedorPisos.transform.childCount; i++)
+        for (int i = 0; i < contenedorPisos.transform.childCount-1; i++)
         {
             floorHeights.Add(contenedorPisos.GetChild(i).gameObject.GetComponent<Piso>().GetElevatorHeightTarget());
         }
