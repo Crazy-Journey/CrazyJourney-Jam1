@@ -17,6 +17,8 @@ public class LifeComponent : MonoBehaviour
     [SerializeField]
     private float maxlife;
 
+    [SerializeField] private float lifeRegen;
+
     [SerializeField]
     private EntityType type;
 
@@ -24,6 +26,11 @@ public class LifeComponent : MonoBehaviour
 
     private PinataManager manager;
 
+
+    public void SetLifeRegen(float _lifeRegen)
+    {
+        lifeRegen = _lifeRegen;
+    }
 
     public void setMaxLife(float _maxlife)
     {
@@ -39,10 +46,23 @@ public class LifeComponent : MonoBehaviour
         currentLife = maxlife;
         manager = GetComponent<PinataManager>();
     }
+
+    private void Update()
+    {
+        // sistema de regeneración de vida
+        if(currentLife < maxlife)
+        {
+            currentLife += lifeRegen * Time.deltaTime;
+            if (currentLife > maxlife) currentLife = maxlife;
+        }  
+    }
+
     public void ReciveDamage(float damage, GameObject bulletOwner)
     {
         currentLife -= damage;
-        hpBar.UpdateBar(currentLife, maxlife);
+
+        if(hpBar != null)
+            hpBar.UpdateBar(currentLife, maxlife);
 
         if (currentLife <= 0)
         {
