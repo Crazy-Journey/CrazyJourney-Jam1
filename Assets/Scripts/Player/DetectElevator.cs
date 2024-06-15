@@ -31,7 +31,7 @@ public class DetectElevator : MonoBehaviour
     
     private bool isInElevator = false;
 
-    private GameObject lastElevator;
+    public GameObject lastElevator;
 
     [SerializeField]
     private PlayerId playerId;
