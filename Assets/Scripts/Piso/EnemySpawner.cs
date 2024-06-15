@@ -39,14 +39,26 @@ public class EnemySpawner : MonoBehaviour
 
     
     [Header("Time")]
+
+
     [SerializeField]
+    private float minSpawnRate;
+    [SerializeField]
+    private float maxSpawnRate;
+
+
     private float spawnRate;
   
     private float elapsedTime = 0;
 
 
     //contator de enemigos
-    private int enemiesCount = 0;   
+    private int enemiesCount = 0;
+
+    private void Start()
+    {
+        spawnRate = Random.Range(minSpawnRate, maxSpawnRate);
+    }
 
     // Update is called once per frame
     void Update()
@@ -66,6 +78,8 @@ public class EnemySpawner : MonoBehaviour
         if(elapsedTime > spawnRate && enemiesCount < maxEnemies)
         {
             elapsedTime = 0;
+            spawnRate = Random.Range(minSpawnRate, maxSpawnRate);
+
             //generate enemy
             GameObject newEnemy = Instantiate(enemyPrefab,getRandomSpawnPos(),Quaternion.identity);
 

@@ -44,6 +44,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4ec576e824cb34e95c40d636dbb691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pisosData:
+  - enemyPower:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+    enemyCoin:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+  - enemyPower:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+    enemyCoin:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+  - enemyPower:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+    enemyCoin:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+  - enemyPower:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+    enemyCoin:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+  - enemyPower:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+    enemyCoin:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+  - enemyPower:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+    enemyCoin:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+  - enemyPower:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
+    enemyCoin:
+      maxEnemies: 0
+      life: 0
+      powerDrop: 0
+      coinDrop: 0
+      speed: 0
+      minSpawnRate: 0
+      maxSpawnRate: 0
 --- !u!1 &365607787642834932
 GameObject:
   m_ObjectHideFlags: 0
