@@ -44,6 +44,120 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4ec576e824cb34e95c40d636dbb691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pisosData:
+  - enemyPower:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+    enemyCoin:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+  - enemyPower:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+    enemyCoin:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+  - enemyPower:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+    enemyCoin:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+  - enemyPower:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+    enemyCoin:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+  - enemyPower:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+    enemyCoin:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+  - enemyPower:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+    enemyCoin:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+  - enemyPower:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+    enemyCoin:
+      maxEnemies: 3
+      life: 10
+      powerDrop: 3
+      coinDrop: 3
+      speed: 2
+      minSpawnRate: 1
+      maxSpawnRate: 1.1
+  pisosContainer: {fileID: 6451926190790127443}
 --- !u!1 &365607787642834932
 GameObject:
   m_ObjectHideFlags: 0
