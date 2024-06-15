@@ -135,7 +135,7 @@ public class LifeComponent : MonoBehaviour
             _player.ChangeCoins(+manager.coinDrop);
 
             // Actualizamos UI del jugador
-            if (bulletOwnerId == 0)
+            /* if (bulletOwnerId == 0)
             {
                 GameObject.Find("CoinsText1").GetComponent<TMP_Text>().text = _player.GetCoins().ToString();
                 GameObject.Find("PowerText1").GetComponent<TMP_Text>().text = _player.GetPower().ToString();
@@ -145,7 +145,7 @@ public class LifeComponent : MonoBehaviour
             {
                 GameObject.Find("CoinsText2").GetComponent<TMP_Text>().text = _player.GetCoins().ToString();
                 GameObject.Find("PowerText2").GetComponent<TMP_Text>().text = _player.GetPower().ToString();
-            }
+            } */
 
             PlayerDataManager.THIS.SetPlayer(bulletOwnerId, _player);
             Destroy(gameObject);

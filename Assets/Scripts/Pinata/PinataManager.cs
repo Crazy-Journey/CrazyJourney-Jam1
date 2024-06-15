@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PinataManager : MonoBehaviour
 {
-     public int powerDrop, coinDrop;
+    public int powerDrop, coinDrop;
+    [SerializeField] GameObject particleEffect;
 
     private EnemySpawner spawner;
 
@@ -17,5 +18,7 @@ public class PinataManager : MonoBehaviour
     private void OnDestroy()
     {
         spawner.PinataDied();
+        GameObject effect = Instantiate(particleEffect, transform.position, Quaternion.identity) as GameObject;
+        Destroy(effect, 10f);
     }
 }

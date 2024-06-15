@@ -627,6 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerDrop: 3
   coinDrop: 0
+  particleEffect: {fileID: 8961178232074331139, guid: 4bde5975bc879094aa059540f0c5c578, type: 3}
 --- !u!114 &5918636204747359084
 MonoBehaviour:
   m_ObjectHideFlags: 0
