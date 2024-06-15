@@ -119,21 +119,13 @@ public class ElevatorComponent : MonoBehaviour
     {
         float distance = pisos[currentFloor].GetElevatorHeightTarget() - transform.parent.position.y;
 
-
-        print(currentFloor);
-        print(pisos[currentFloor].GetElevatorHeightTarget());
-
-
         for (int i = 0; i < 50;i++)
         {
 
             transform.parent.position +=  new Vector3( 0,distance / 50,0);  
-
-          
-
+         
             yield return new WaitForSecondsRealtime(0.01f);
         }
-
 
     }
 
