@@ -138,7 +138,13 @@ public class LifeComponent : MonoBehaviour
 
         playerAnimations.OnDeath();
 
+        GetComponent<CapsuleCollider2D>().offset = new Vector2(0f, 0.35f);
+        GetComponent<CapsuleCollider2D>().size = new Vector2(0.7f, 0.7f);
+
         yield return new WaitForSecondsRealtime(2f);
+
+        GetComponent<CapsuleCollider2D>().offset = new Vector2(0f, 0.45f);
+        GetComponent<CapsuleCollider2D>().size = new Vector2(0.9f, 0.9f);
 
         playerAnimations.OnRespawn();
 
