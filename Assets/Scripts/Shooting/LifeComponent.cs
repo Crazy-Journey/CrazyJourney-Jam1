@@ -42,6 +42,12 @@ public class LifeComponent : MonoBehaviour
 
     private InputActionMap actionMap;
 
+    [SerializeField]
+    private LayerMask elevatorMask;
+
+
+    [SerializeField]
+    Transform raycastOrigin;
     public void SetLifeRegen(float _lifeRegen)
     {
         lifeRegen = _lifeRegen;
@@ -170,10 +176,18 @@ public class LifeComponent : MonoBehaviour
         playerAnimations.OnRespawn();
 
         //Subimos el ascensor de pisos
-        GameObject elevator = GetComponentInChildren<DetectElevator>().lastElevator;
+        //GameObject elevator = GetComponentInChildren<DetectElevator>().lastElevator;
+
+        GameObject elevator = getElevatorInFloor();
+
+        print(elevator);
+
 
         if (elevator != null)
+        {
             elevator.GetComponentInChildren<ElevatorComponent>().SubirPiso();
+            //transform.position = elevator.transform.position;   
+        }
 
         // Subimos el player un pisito
         int myId = GetComponentInChildren<PlayerId>().GetPlayerId();
@@ -201,5 +215,20 @@ public class LifeComponent : MonoBehaviour
 
         actionMap.Enable();
 
+    }
+
+
+    GameObject getElevatorInFloor()
+    {
+        RaycastHit2D hit1 = Physics2D.Raycast(raycastOrigin.position, new Vector2(1, 0), 10000f, elevatorMask);
+        RaycastHit2D hit2 = Physics2D.Raycast(raycastOrigin.position, new Vector2(-1, 0),10000f, elevatorMask);
+
+        GameObject ob = null;
+
+        if (hit1.rigidbody != null) ob = hit1.rigidbody.gameObject;
+        else if (hit2.rigidbody != null) ob = hit2.rigidbody.gameObject;
+
+
+        return ob;
     }
 }
