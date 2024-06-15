@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField]
+    private int type;
+    public int getEnemyType () { return type; } 
+
+
     [Header("Spawn")]
     [SerializeField]
     private GameObject enemyPrefab;
