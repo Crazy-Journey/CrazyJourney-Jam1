@@ -47,6 +47,15 @@ public class LifeComponent : MonoBehaviour
     {
         currentLife = maxlife;
         manager = GetComponent<PinataManager>();
+        if (type == EntityType.Player)
+        {
+            if (playerId.GetPlayerId() == 0)
+                hpBar = GameObject.Find("P1HPBar").GetComponent<UpdateHPbar>();
+
+            else if (playerId.GetPlayerId() == 1)
+                hpBar = GameObject.Find("P2HPBar").GetComponent<UpdateHPbar>();
+        }
+            
     }
 
     private void Update()
@@ -96,6 +105,9 @@ public class LifeComponent : MonoBehaviour
             PlayerDataManager.THIS.SetPlayer(myId, _player);
 
             currentLife = maxlife;
+
+            if (hpBar != null)
+                hpBar.UpdateBar(currentLife, maxlife);
         }
 
         if(type == EntityType.Enemy)
