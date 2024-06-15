@@ -26,6 +26,9 @@ public class ElevatorComponent : MonoBehaviour
 
     private Transform movingPlayer = null;
     private DetectElevator playerDetectElevator = null;
+    private bool isMoving = false;
+    public void startMoving() { isMoving = true; }
+    public bool IsMoving() {  return isMoving; }    
 
     public void setMovingPlayer(Transform newMovingPlayer)
     {
@@ -115,7 +118,7 @@ public class ElevatorComponent : MonoBehaviour
 
         movingPlayer = null;    
         playerDetectElevator = null;
-
+        isMoving = false;   
 
     }
     public float getFloorCost(int i)
