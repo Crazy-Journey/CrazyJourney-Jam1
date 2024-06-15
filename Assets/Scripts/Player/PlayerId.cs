@@ -11,6 +11,11 @@ public class PlayerId : MonoBehaviour
 
     private void Awake()
     {
+        if (nextId >= 2)
+        {
+            Destroy(gameObject);
+            return;
+        }
         playerId = nextId;
         nextId++;
     }

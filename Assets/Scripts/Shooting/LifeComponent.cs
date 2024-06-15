@@ -85,11 +85,14 @@ public class LifeComponent : MonoBehaviour
     {
         if(type == EntityType.Player)
         {
-            // Obtenemos el piso del player que nos ha matado
-            //int bulletOwnerId = bulletOwner.GetComponentInChildren<PlayerId>().GetPlayerId();
-            //int targetPiso = PlayerDataManager.THIS.GetPlayer(bulletOwnerId).GetPiso();
 
-            // Seteamos nuestro piso al piso del player que nos ha matado
+            //Subimos el ascensor de pisos
+            GameObject elevator = GetComponentInChildren<DetectElevator>().lastElevator;
+
+            if (elevator != null)
+                elevator.GetComponentInChildren<ElevatorComponent>().SubirPiso();
+
+            // Subimos el player un pisito
             int myId = GetComponentInChildren<PlayerId>().GetPlayerId();
             var data = PlayerDataManager.THIS.GetPlayer(myId);
             data.SetPiso(math.clamp(PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPiso() - 1,0,7));
@@ -104,6 +107,7 @@ public class LifeComponent : MonoBehaviour
             _player.PowerMultiplier(0.8f);
             PlayerDataManager.THIS.SetPlayer(myId, _player);
 
+            // Reseteamos la vida
             currentLife = maxlife;
 
             if (hpBar != null)
