@@ -42,8 +42,8 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
 
-    [SerializeField] PlayerData playerData1;
-    [SerializeField] PlayerData playerData2;
+    private PlayerData playerData1;
+    private PlayerData playerData2;
 
     private void Awake()
     {
@@ -56,14 +56,14 @@ public class PlayerDataManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public PlayerData Player1()
+    public ref PlayerData Player1()
     {
-        return playerData1;
+        return ref playerData1;
     }
 
-    public PlayerData Player2()
+    public ref PlayerData Player2()
     {
-        return playerData2;
+        return ref playerData2;
     }
 
 }
