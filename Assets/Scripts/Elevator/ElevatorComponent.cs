@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ElevatorComponent : MonoBehaviour
 {
+    [Header("Pisos")]
+
 
     [SerializeField]
     private int currentFloor;
@@ -13,6 +15,18 @@ public class ElevatorComponent : MonoBehaviour
 
     [SerializeField]
     private List<int> floorCosts = new List<int>();
+
+    [SerializeField]
+    [Tooltip("Objeto que contiene todos los pisos(deben estar en orden)")]
+    private Transform PisosContainer;
+
+    [SerializeField]
+    private List<GameObject> pisos = new List<GameObject>();
+
+
+    #region Raycast
+
+    [Header("Raycast")]
 
     [SerializeField]
     private Transform RaycastOrigin;
@@ -27,7 +41,10 @@ public class ElevatorComponent : MonoBehaviour
     private bool PlayerDetected;
 
     [SerializeField]
-    private LayerMask playerMask; 
+    private LayerMask playerMask;
+    #endregion
+
+
 
     public void SubirPiso(int cantidad = 1)
     {
@@ -66,6 +83,12 @@ public class ElevatorComponent : MonoBehaviour
         for(int i = 0;i < Nfloors; i++)
         {
             floorCosts.Add(FormulaEscalado(i));
+        }
+
+
+        for (int i = 0; i < Nfloors; i++)
+        {
+            pisos.Add(PisosContainer.GetChild(0).gameObject);
         }
     }
 
