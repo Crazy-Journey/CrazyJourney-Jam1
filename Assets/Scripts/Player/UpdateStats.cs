@@ -17,9 +17,9 @@ public class UpdateStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player1CoinsText.text = PlayerDataManager.THIS.GetPlayer(0).GetCoins().ToString();
-        player1PowerText.text = PlayerDataManager.THIS.GetPlayer(0).GetPower().ToString();
-        player2CoinsText.text = PlayerDataManager.THIS.GetPlayer(1).GetCoins().ToString();
-        player2PowerText.text = PlayerDataManager.THIS.GetPlayer(1).GetPower().ToString();
+        player1CoinsText.text = Mathf.FloorToInt(PlayerDataManager.THIS.GetPlayer(0).GetCoins()).ToString();
+        player1PowerText.text = Mathf.FloorToInt(PlayerDataManager.THIS.GetPlayer(0).GetPower()).ToString();
+        player2CoinsText.text = Mathf.FloorToInt(PlayerDataManager.THIS.GetPlayer(1).GetCoins()).ToString();
+        player2PowerText.text = Mathf.FloorToInt(PlayerDataManager.THIS.GetPlayer(1).GetPower()).ToString();
     }
 }
