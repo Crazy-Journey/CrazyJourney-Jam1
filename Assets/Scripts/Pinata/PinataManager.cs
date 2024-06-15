@@ -6,7 +6,4 @@ public class PinataManager : MonoBehaviour
 {
     [SerializeField] public int powerDrop, coinDrop;
 
-    }
-
-
 }
