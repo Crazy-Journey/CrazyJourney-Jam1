@@ -19,11 +19,6 @@ public class SpawnSystem : MonoBehaviour
         SpawnOnPiso();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void GetPisos()
     {
@@ -41,8 +36,8 @@ public class SpawnSystem : MonoBehaviour
     public void SpawnOnPiso()
     {
         // Obtenemos el piso objetivo a partir del data del player
-        int targetPiso = PlayerDataManager.THIS.Player(playerId.GetPlayerId()).GetPiso();
-
+        int targetPiso = PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPiso();
+        print("Id en spawn:" + targetPiso);
         // Obtenemos los spawners del piso objetivo
         Spawner[] spawners = pisos[targetPiso].GetComponentsInChildren<Spawner>();
         

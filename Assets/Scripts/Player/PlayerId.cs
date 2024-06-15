@@ -9,7 +9,7 @@ public class PlayerId : MonoBehaviour
 
     public int playerId;
 
-    void Start()
+    private void Awake()
     {
         playerId = nextId;
         nextId++;
