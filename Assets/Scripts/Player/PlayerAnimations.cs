@@ -7,8 +7,8 @@ public class PlayerAnimations : MonoBehaviour
     private Animator animator;
 
     [SerializeField] Rigidbody2D objectRb;
-
-    void Start()
+    
+    void Awake()
     {
         animator = GetComponent<Animator>();
     }
