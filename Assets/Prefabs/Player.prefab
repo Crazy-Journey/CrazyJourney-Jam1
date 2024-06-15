@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5416326676951549283, guid: 4db63379781ca6140815fe88e7d7dbea, type: 3}
   fireRate: 0.5
-  bulletDamage: 5
+  bulletDamage: 1
   OwnerObject: {fileID: 1110024520146615666}
   SpawnPoint: {fileID: 1416051041869660543}
   VisualElement: {fileID: 4088135964234820511}
@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1d9ccee64a2ee4fbefc25b69ebdec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerId: 0
 --- !u!1 &1807901737847266419
 GameObject:
   m_ObjectHideFlags: 0
