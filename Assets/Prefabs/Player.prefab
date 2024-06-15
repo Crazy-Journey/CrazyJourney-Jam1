@@ -51,6 +51,7 @@ MonoBehaviour:
   OwnerObject: {fileID: 1110024520146615666}
   SpawnPoint: {fileID: 1416051041869660543}
   VisualElement: {fileID: 8548122719789242088}
+  playerId: {fileID: 2839472815869267500}
 --- !u!1 &724586159798119372
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +172,7 @@ Transform:
   - {fileID: 76180377455718399}
   - {fileID: 8140681973830608556}
   - {fileID: 1108455888360793013}
+  - {fileID: 6206839130079357285}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1084216011251414985
@@ -268,6 +270,10 @@ MonoBehaviour:
   playerId: {fileID: 2839472815869267500}
   playerAnimations: {fileID: 6547147584867639825}
   actionMapContainer: {fileID: 5032199304777654181}
+  elevatorMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  raycastOrigin: {fileID: 6206839130079357285}
 --- !u!114 &6252476129644236724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +424,37 @@ MonoBehaviour:
     m_Bits: 1024
   lastElevator: {fileID: 0}
   playerId: {fileID: 2839472815869267500}
+--- !u!1 &4329674407208509945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6206839130079357285}
+  m_Layer: 7
+  m_Name: SpawnRaycast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6206839130079357285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4329674407208509945}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.588, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2439380682940072829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4698986687763593675
 GameObject:
   m_ObjectHideFlags: 0

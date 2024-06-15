@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class ShootingComponent : MonoBehaviour
 {
@@ -37,13 +38,24 @@ public class ShootingComponent : MonoBehaviour
     private SpriteRenderer VisualElement;
 
 
-
+    [SerializeField]
+    PlayerId playerId;
 
 
     // Start is called before the first frame update
     void Start()
     {
         myTransform = transform;          
+
+        if(playerId.GetPlayerId() == 0)
+        {
+            VisualElement = myTransform.parent.GetChild(1).GetComponent<SpriteRenderer>();
+        }
+        else
+        {
+            VisualElement = myTransform.parent.GetChild(0).GetComponent<SpriteRenderer>();
+        }
+
     }
 
     // Update is called once per frame
