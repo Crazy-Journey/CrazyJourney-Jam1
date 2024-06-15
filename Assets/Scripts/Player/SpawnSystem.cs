@@ -32,7 +32,7 @@ public class SpawnSystem : MonoBehaviour
         for (int i = 0; i < pisosContainer.childCount; i++)
         {
             if (pisosContainer.childCount <= i)
-                continue;
+                break;
 
             pisos.Add(pisosContainer.GetChild(i).gameObject.GetComponent<Piso>());
         }

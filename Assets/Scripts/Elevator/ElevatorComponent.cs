@@ -97,7 +97,7 @@ public class ElevatorComponent : MonoBehaviour
         {
             if( PisosContainer.childCount <= i)
             {
-                continue;
+                break;
             }
 
             pisos.Add(PisosContainer.GetChild(i).gameObject.GetComponent<Piso>());

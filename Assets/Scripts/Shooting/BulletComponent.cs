@@ -12,6 +12,8 @@ public class BulletComponent : MonoBehaviour
 
     private float damage;
 
+    [SerializeField]
+    private float lifeTime = 10f;
 
     private void Awake()
     {

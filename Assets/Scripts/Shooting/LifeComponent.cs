@@ -5,16 +5,23 @@ using UnityEngine;
 public class LifeComponent : MonoBehaviour
 {
     [SerializeField]
-    private float life;
+    private float currentLife;
+    
+    [SerializeField]
+    private float maxlife;
 
     [SerializeField]
-    private int type; 
+    private int type;
 
+    private void Start()
+    {
+        currentLife = maxlife;
+    }
     public void ReciveDamage(float damage)
     {
-        life -= damage; 
+        currentLife -= damage; 
 
-        if (life <= 0)
+        if (currentLife <= 0)
         {
             Die();
         }
