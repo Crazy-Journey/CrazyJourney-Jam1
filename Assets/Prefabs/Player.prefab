@@ -315,6 +315,7 @@ MonoBehaviour:
   elevatorMask:
     serializedVersion: 2
     m_Bits: 1024
+  playerId: {fileID: 2839472815869267500}
 --- !u!1 &5032199304777654181
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,6 +33,9 @@ public class DetectElevator : MonoBehaviour
 
     private GameObject lastElevator;
 
+    [SerializeField]
+    private PlayerId playerId;
+
     private void Awake()
     {
         actionMap = actionMapContainer.GetComponent<PlayerInput>().currentActionMap;
@@ -49,6 +52,12 @@ public class DetectElevator : MonoBehaviour
         playerContainer.GetComponent<CapsuleCollider2D>().isTrigger = false;
 
         isInElevator = false;
+
+
+        var data =  PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId());
+        data.SetPiso(lastElevator.GetComponentInChildren<ElevatorComponent>().getCurrentFloor());
+        PlayerDataManager.THIS.SetPlayer(playerId.GetPlayerId(), data); 
+          
     }
 
     // Update is called once per frame

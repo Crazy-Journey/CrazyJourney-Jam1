@@ -11,6 +11,8 @@ public class ElevatorComponent : MonoBehaviour
     [SerializeField]
     private int currentFloor;
 
+    public int getCurrentFloor() {  return currentFloor; }  
+
     [SerializeField]
     private int Nfloors;
 
