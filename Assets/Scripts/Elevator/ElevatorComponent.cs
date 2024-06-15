@@ -129,4 +129,14 @@ public class ElevatorComponent : MonoBehaviour
 
     }
 
+
+    public float getFloorCost(int i)
+    {
+        if (i < 0 || i > Nfloors)
+        {
+            Debug.Log("Indice invalido al obtener el cost de un piso, indice era :" + i);
+            return -1;
+        }
+        return floorCosts[i];
+    }
 }
