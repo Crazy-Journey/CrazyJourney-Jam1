@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ElevatorComponent : MonoBehaviour
 {
@@ -21,12 +22,14 @@ public class ElevatorComponent : MonoBehaviour
     private Transform PisosContainer;
 
     [SerializeField]
-    private List<GameObject> pisos = new List<GameObject>();
+    private List<Piso> pisos = new List<Piso>();
 
 
     #region Raycast
 
     [Header("Raycast")]
+
+ 
 
     [SerializeField]
     private Transform RaycastOrigin;
@@ -80,7 +83,10 @@ public class ElevatorComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0;i < Nfloors; i++)
+
+
+
+        for (int i = 0;i < Nfloors; i++)
         {
             floorCosts.Add(FormulaEscalado(i));
         }
@@ -88,8 +94,14 @@ public class ElevatorComponent : MonoBehaviour
 
         for (int i = 0; i < Nfloors; i++)
         {
-            pisos.Add(PisosContainer.GetChild(0).gameObject);
+            if( PisosContainer.childCount <= i)
+            {
+                continue;
+            }
+
+            pisos.Add(PisosContainer.GetChild(i).gameObject.GetComponent<Piso>());
         }
+
     }
 
     // Update is called once per frame
