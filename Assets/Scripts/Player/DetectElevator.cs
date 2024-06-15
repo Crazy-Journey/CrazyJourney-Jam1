@@ -75,7 +75,7 @@ public class DetectElevator : MonoBehaviour
         }
         else
         {
-            ElevatorDetected =false;    
+            ElevatorDetected = false;    
         }
     }
 
@@ -88,6 +88,11 @@ public class DetectElevator : MonoBehaviour
             {
 
             }
+            ElevatorComponent elevatorComponent = lastElevator.GetComponentInChildren<ElevatorComponent>();
+
+            if (elevatorComponent.IsMoving()) { return; }
+
+            elevatorComponent.startMoving();
 
 
             print("entra ascensor");
@@ -101,12 +106,10 @@ public class DetectElevator : MonoBehaviour
 
             playerContainer.GetComponent<CapsuleCollider2D>().isTrigger = true;
 
-            ElevatorComponent elevatorComponent = lastElevator.GetComponentInChildren<ElevatorComponent>();
 
             elevatorComponent.setMovingPlayer(playerContainer.transform);
             elevatorComponent.setPlayerDetectElevator(this);
             elevatorComponent.BajarPiso();
-
 
         }
 
