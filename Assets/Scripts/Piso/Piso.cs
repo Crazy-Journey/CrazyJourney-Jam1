@@ -5,7 +5,7 @@ using UnityEngine;
 public class Piso : MonoBehaviour
 {
 
-    [SerializeField] private uint id;
+    [SerializeField] private int id;
 
     [SerializeField] Transform elevatorTarget; 
     private float elevatorHeightTarget;
@@ -15,7 +15,7 @@ public class Piso : MonoBehaviour
         elevatorHeightTarget = elevatorTarget.position.y;
     }
 
-    public uint GetId() { return id; }
+    public int GetId() { return id; }
 
     public float GetElevatorHeightTarget() {  return elevatorHeightTarget; }
 }

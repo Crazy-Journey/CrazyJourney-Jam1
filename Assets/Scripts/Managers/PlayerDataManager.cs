@@ -8,37 +8,53 @@ public class PlayerDataManager : MonoBehaviour
 
     public struct PlayerData
     {
-        private float power;
-        private int coins;
+        private float _power;
+        private int _coins;
+        private int _piso;
 
-        public void SetPower(float p)
+        public void SetPower(float power)
         {
-            power = p;
+            _power = power;
         }
 
-        public void ChangePower(float p)
+        public void ChangePower(float power)
         {
-            power += p;
+            _power += power;
         }
 
-        public void SetCoins(int c)
+        public void SetCoins(int coins)
         {
-            coins = c;
+            _coins = coins;
         }
 
-        public void ChangeCoins(int c)
+        public void ChangeCoins(int coins)
         {
-            coins += c;
+            _coins += coins;
+        }
+
+        public void SetPiso(int piso)
+        {
+            _piso = piso;
+        }
+
+        public void ChangePiso(int piso)
+        {
+            _piso += piso;
         }
 
         public float GetPower()
         {
-            return power;
+            return _power;
         }
 
         public int GetCoins()
         {
-            return coins;
+            return _coins;
+        }
+
+        public int GetPiso()
+        {
+            return _piso;
         }
     }
 
