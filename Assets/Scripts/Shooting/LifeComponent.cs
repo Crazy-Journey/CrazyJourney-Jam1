@@ -72,8 +72,11 @@ public class LifeComponent : MonoBehaviour
             int bulletOwnerId = bulletOwner.GetComponentInChildren<PlayerId>().GetPlayerId();
 
             // LE DAMOS NUESTRO DROP AL JUGADOR QUE NOS HA MATADO //
-            PlayerDataManager.THIS.GetPlayer(bulletOwnerId).ChangePower(+manager.powerDrop);
-            PlayerDataManager.THIS.GetPlayer(bulletOwnerId).ChangeCoins(+manager.coinDrop);
+            PlayerDataManager.PlayerData _player = PlayerDataManager.THIS.GetPlayer(bulletOwnerId);
+
+            _player.ChangePower(+manager.powerDrop);
+            _player.ChangeCoins(+manager.coinDrop);
+            PlayerDataManager.THIS.SetPlayer(bulletOwnerId, _player);
             Destroy(gameObject);
         }
 

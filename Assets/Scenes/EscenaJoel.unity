@@ -291,32 +291,6 @@ Transform:
   - {fileID: 1445678278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &343656835 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1807901737847266419, guid: 16d81627f7246df488f3537e0607b4ac, type: 3}
-  m_PrefabInstance: {fileID: 1471852480}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &343656838
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343656835}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2db5ce71230874945a153b2d110b7136, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &423427024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,6 +1293,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1416051041869660543, guid: 16d81627f7246df488f3537e0607b4ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.262
+      objectReference: {fileID: 0}
     - target: {fileID: 1807901737847266419, guid: 16d81627f7246df488f3537e0607b4ac, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1363,6 +1341,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3578520717770709252, guid: 16d81627f7246df488f3537e0607b4ac, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 292595560}
     - target: {fileID: 4088135964234820511, guid: 16d81627f7246df488f3537e0607b4ac, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1395,13 +1377,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.47779262
       objectReference: {fileID: 0}
+    - target: {fileID: 8565587844585137252, guid: 16d81627f7246df488f3537e0607b4ac, type: 3}
+      propertyPath: fireRate
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1807901737847266419, guid: 16d81627f7246df488f3537e0607b4ac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 343656838}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16d81627f7246df488f3537e0607b4ac, type: 3}
 --- !u!1 &1474878302
 GameObject:
