@@ -96,14 +96,19 @@ public class ShootingComponent : MonoBehaviour
     private void FlipX(Vector2 aim)
     {
 
-        if(aim.x <= 0)
+        if(aim.x > 0)
         {
-            VisualElement.flipX = true; 
+            VisualElement.transform.localScale = new Vector3(1, VisualElement.transform.localScale.y, VisualElement.transform.localScale.z);
+            VisualElement.transform.GetChild(0).transform.right = aim;
+
         }
         else
         {
-            VisualElement.flipX = false;
+            VisualElement.transform.localScale = new Vector3(-1, VisualElement.transform.localScale.y, VisualElement.transform.localScale.z);
+            VisualElement.transform.GetChild(0).transform.right = (-aim);
+
         }
+
 
     }
 
