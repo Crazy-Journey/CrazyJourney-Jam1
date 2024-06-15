@@ -717,6 +717,7 @@ MonoBehaviour:
   centerSpawn: {fileID: 772923793429134471}
   spawnWidth: 7.5
   spawnHeight: 1.25
+  maxEnemies: 3
   enemyLife: 4
   enemyPowerDrop: 4
   enemyCoinDrop: 4
