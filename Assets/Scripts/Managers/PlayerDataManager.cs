@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerDataManager;
 
 public class PlayerDataManager : MonoBehaviour
 {
@@ -58,8 +59,7 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
 
-    private PlayerData playerData1;
-    private PlayerData playerData2;
+    private List<PlayerData> playerData = new List<PlayerData>();
 
     private void Awake()
     {
@@ -74,23 +74,20 @@ public class PlayerDataManager : MonoBehaviour
 
     private void Start()
     {
-        playerData1.SetPower(0);
-        playerData1.SetCoins(0);
-        playerData1.SetPiso(0);
+        playerData.Add(new PlayerData());
+        playerData.Add(new PlayerData());
 
-        playerData2.SetPower(0);
-        playerData2.SetCoins(0);
-        playerData2.SetPiso(0);
+        foreach (PlayerData playerData in playerData)
+        {
+            playerData.SetPower(0);
+            playerData.SetCoins(0);
+            playerData.SetPiso(0);
+        };
     }
 
-    public ref PlayerData Player1()
+    public PlayerData Player(int p)
     {
-        return ref playerData1;
-    }
-
-    public ref PlayerData Player2()
-    {
-        return ref playerData2;
+        return playerData[p];
     }
 
 }
