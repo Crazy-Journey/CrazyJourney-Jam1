@@ -264,6 +264,7 @@ MonoBehaviour:
   type: 0
   hpBar: {fileID: 0}
   playerId: {fileID: 2839472815869267500}
+  playerAnimations: {fileID: 6547147584867639825}
 --- !u!1 &3762668272761809257
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +726,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.9, y: 0.95}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

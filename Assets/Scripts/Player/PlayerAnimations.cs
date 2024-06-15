@@ -34,8 +34,8 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetTrigger("Death");
     }
 
-    public void OnRespawn()
+    public void OnHit()
     {
-        animator.SetTrigger("Respawn");
+        animator.SetTrigger("Hit");
     }
 }

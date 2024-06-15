@@ -31,6 +31,9 @@ public class LifeComponent : MonoBehaviour
 
     [SerializeField]
     private PlayerId playerId;
+
+    [SerializeField]
+    private PlayerAnimations playerAnimations;
     public void SetLifeRegen(float _lifeRegen)
     {
         lifeRegen = _lifeRegen;
@@ -77,7 +80,9 @@ public class LifeComponent : MonoBehaviour
     {
         currentLife -= damage;
 
-        if(hpBar != null)
+        playerAnimations.OnHit();
+
+        if (hpBar != null)
             hpBar.UpdateBar(currentLife, maxlife);
 
         if (currentLife <= 0)
