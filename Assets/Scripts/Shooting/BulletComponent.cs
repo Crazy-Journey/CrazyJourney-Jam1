@@ -14,6 +14,7 @@ public class BulletComponent : MonoBehaviour
 
     [SerializeField]
     private float lifeTime = 10f;
+    private float elapsedTime = 0f;
 
     private void Awake()
     {
@@ -61,5 +62,15 @@ public class BulletComponent : MonoBehaviour
             }
         }
     }
-  
+
+    private void Update()
+    {
+        elapsedTime += Time.deltaTime;
+
+        if (elapsedTime > lifeTime)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
