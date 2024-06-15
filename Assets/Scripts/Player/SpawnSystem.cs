@@ -36,11 +36,11 @@ public class SpawnSystem : MonoBehaviour
     public void SpawnOnPiso()
     {
         // Obtenemos el piso objetivo a partir del data del player
-        int targetPiso = PlayerDataManager.THIS.Player(playerId.GetPlayerId()).GetPiso();
-
+        int targetPiso = PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPiso();
+        print("Id en spawn:" + targetPiso);
         // Obtenemos los spawners del piso objetivo
         Spawner[] spawners = pisos[targetPiso].GetComponentsInChildren<Spawner>();
-        print("Id en spawn:" + playerId.GetPlayerId());
+        
         // Obtenemos el spawner correspondiente al player según su id
         objectTr.position = spawners[playerId.GetPlayerId()].transform.position;
     }

@@ -7,6 +7,11 @@ public class PlayerDataManager : MonoBehaviour
 {
     public static PlayerDataManager THIS;
 
+    [SerializeField] float initialPower;
+    [SerializeField] int initialCoins;
+    [SerializeField] int initialPiso;
+
+
     public struct PlayerData
     {
         private float _power;
@@ -69,7 +74,15 @@ public class PlayerDataManager : MonoBehaviour
             THIS = this;
             DontDestroyOnLoad(gameObject);
         }
-        else Destroy(gameObject);
+        else{
+            Destroy(gameObject);
+            return;
+        }
+            
+
+        
+
+
     }
 
     private void Start()
@@ -77,17 +90,27 @@ public class PlayerDataManager : MonoBehaviour
         playerData.Add(new PlayerData());
         playerData.Add(new PlayerData());
 
-        foreach (PlayerData playerData in playerData)
+        for (int i = 0; i < 2; i++)
         {
-            playerData.SetPower(0);
-            playerData.SetCoins(0);
-            playerData.SetPiso(0);
+            PlayerData player = new PlayerData();
+            player.SetPower(initialPower);
+            player.SetCoins(initialCoins);
+            player.SetPiso(initialPiso);
+            SetPlayer(i, player);
         };
     }
+    private void Update()
+    {
+    }
 
-    public PlayerData Player(int p)
+    public PlayerData GetPlayer(int p)
     {
         return playerData[p];
+    }
+
+    public void SetPlayer(int p, PlayerData pData)
+    {
+        playerData[p] = pData;
     }
 
 }
