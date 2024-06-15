@@ -27,7 +27,11 @@ public class LifeComponent : MonoBehaviour
 
     public void setMaxLife(float _maxlife)
     {
-       maxlife = _maxlife;
+        float lifeOffset = _maxlife - maxlife;
+        currentLife += lifeOffset; // Esto es para que al ganar vida máxima también ganes vida actual, es decir si estás a 47/50 y ganas 3, estarás a 50/53.
+
+        maxlife = _maxlife;
+
     }
 
     private void Start()
