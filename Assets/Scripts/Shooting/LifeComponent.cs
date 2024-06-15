@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LifeComponent : MonoBehaviour
 {
@@ -65,7 +67,10 @@ public class LifeComponent : MonoBehaviour
         {
             currentLife += lifeRegen * Time.deltaTime;
             if (currentLife > maxlife) currentLife = maxlife;
-        }  
+
+            if (hpBar != null)
+                hpBar.UpdateBar(currentLife, maxlife);
+        }
     }
 
     public void ReciveDamage(float damage, GameObject bulletOwner)
@@ -123,6 +128,20 @@ public class LifeComponent : MonoBehaviour
 
             _player.ChangePower(+manager.powerDrop);
             _player.ChangeCoins(+manager.coinDrop);
+
+            // Actualizamos UI del jugador
+            if (bulletOwnerId == 0)
+            {
+                GameObject.Find("CoinsText1").GetComponent<TMP_Text>().text = _player.GetCoins().ToString();
+                GameObject.Find("PowerText1").GetComponent<TMP_Text>().text = _player.GetPower().ToString();
+            }
+
+            else if (bulletOwnerId == 1)
+            {
+                GameObject.Find("CoinsText2").GetComponent<TMP_Text>().text = _player.GetCoins().ToString();
+                GameObject.Find("PowerText2").GetComponent<TMP_Text>().text = _player.GetPower().ToString();
+            }
+
             PlayerDataManager.THIS.SetPlayer(bulletOwnerId, _player);
             Destroy(gameObject);
         }
