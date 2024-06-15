@@ -13,25 +13,28 @@ public class LifeComponent : MonoBehaviour
     [SerializeField]
     private int type;
 
+    private PinataManager manager;
+
     private void Start()
     {
         currentLife = maxlife;
+        manager = GetComponent<PinataManager>();
     }
-    public void ReciveDamage(float damage)
+    public void ReciveDamage(float damage, GameObject bulletOwner)
     {
         currentLife -= damage; 
 
         if (currentLife <= 0)
         {
-            Die();
+            Die(bulletOwner);
         }
     }
 
-    private void Die()
+    private void Die(GameObject bulletOwner)
     {
         //dependiendo del tipo hacer X cosa 
         //...
-
+        //bulletOwner.GetComponent<>
 
 
         Destroy(gameObject);

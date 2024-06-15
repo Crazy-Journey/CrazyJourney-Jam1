@@ -50,7 +50,7 @@ public class BulletComponent : MonoBehaviour
 
             if (otherLife != null)
             {
-                otherLife.ReciveDamage(damage);
+                otherLife.ReciveDamage(damage, owner);
             }
 
 
