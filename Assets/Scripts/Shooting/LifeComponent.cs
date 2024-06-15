@@ -32,7 +32,7 @@ public class LifeComponent : MonoBehaviour
     public void ReciveDamage(float damage, GameObject bulletOwner)
     {
         currentLife -= damage;
-        hpBar.UpdateBar(currentLife, maxlife);
+        //hpBar.UpdateBar(currentLife, maxlife);
 
         if (currentLife <= 0)
         {
@@ -42,6 +42,7 @@ public class LifeComponent : MonoBehaviour
 
     private void Die(GameObject bulletOwner)
     {
+        print("muerto");
         if(type == EntityType.Player)
         {
             // Obtenemos el piso del player que nos ha matado
@@ -49,11 +50,13 @@ public class LifeComponent : MonoBehaviour
             int targetPiso = PlayerDataManager.THIS.GetPlayer(bulletOwnerId).GetPiso();
 
             // Seteamos nuestro piso al piso del player que nos ha matado
-            int myId = transform.parent.GetComponentInChildren<PlayerId>().GetPlayerId();
+            int myId = GetComponentInChildren<PlayerId>().GetPlayerId();
             PlayerDataManager.THIS.GetPlayer(myId).SetPiso(targetPiso);
 
             // Spawneamos en el nuevo piso
-            transform.parent.GetComponentInChildren<SpawnSystem>().SpawnOnPiso();
+            GetComponentInChildren<SpawnSystem>().SpawnOnPiso();
+
+            currentLife = maxlife;
 
             // TAMBIEN PERDEMOS UN POCO DE PODER // TO DO
         }
@@ -61,9 +64,10 @@ public class LifeComponent : MonoBehaviour
         if(type == EntityType.Enemy)
         {
             // LE DAMOS NUESTRO DROP AL JUGADOR QUE NOS HA MATADO // TO DO
+            Destroy(gameObject);
         }
 
 
-        Destroy(gameObject);
+        
     }
 }
