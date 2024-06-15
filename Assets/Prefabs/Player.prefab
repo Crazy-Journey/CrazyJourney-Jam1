@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1479374633830747231}
   - component: {fileID: 8565587844585137252}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shooting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 76180377455718399}
   - component: {fileID: 8814245291040733929}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1416051041869660543}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2439380682940072829}
   - component: {fileID: 1084216011251414985}
   - component: {fileID: 7665303389655117519}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413343755264575674}
   - component: {fileID: 4088135964234820511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737254251494298024}
   - component: {fileID: 3578520717770709252}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5110839111496129358}
   - component: {fileID: 1534273490885165723}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16557bc090d87642ab03fc13099b6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
+  jumpForce: 6
   objectRb: {fileID: 1084216011251414985}
   debugInfo: 0
   canJump: 1
@@ -535,7 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6338056236043186809}
   - component: {fileID: 5485049114802676166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}

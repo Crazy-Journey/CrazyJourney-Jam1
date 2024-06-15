@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3852755664774242351}
   - component: {fileID: 6559723978315426717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,8 @@ GameObject:
   - component: {fileID: 967861371405094510}
   - component: {fileID: 3860303207148061975}
   - component: {fileID: 1336857082047122287}
-  m_Layer: 0
+  - component: {fileID: -4712282985160488391}
+  m_Layer: 8
   m_Name: Pinata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3852755664774242351}
@@ -194,10 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35cf7c177c426241a1e4d60ecc03fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   directionResetTimer: 6
-  bounceTimer: 1
-  bounceBack: 1500
+  bounceTimer: 0.3
   objectRb: {fileID: 5863335884201907963}
 --- !u!114 &1336857082047122287
 MonoBehaviour:
@@ -213,3 +213,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xpDrop: 0
   coinDrop: 0
+--- !u!114 &-4712282985160488391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5133676289981099119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797fd56272d26d847a8a58ba33ef99aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
+  type: 0

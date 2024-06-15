@@ -7,8 +7,7 @@ public class PinataMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 5;
     [SerializeField] private float directionResetTimer = 7;
-    [SerializeField] private float bounceTimer = 1;
-    [SerializeField] private float bounceBack = 5;
+    [SerializeField] private float bounceTimer = 3;
 
     [SerializeField] Rigidbody2D objectRb;
 
@@ -25,13 +24,10 @@ public class PinataMovement : MonoBehaviour
 
     void Update()
     {
-        if (!bounced)
-            RandomDirectionChange();
+        RandomDirectionChange();
 
         objectRb.velocity = moveDirection.normalized * speed;
 
-        if (bounced)
-            HandleBounce();
     }
 
     void RandomDirectionChange()
@@ -48,27 +44,34 @@ public class PinataMovement : MonoBehaviour
         }
     }
 
-    void HandleBounce()
-    {
-        objectRb.velocity = Vector2.zero;
-        bounceTimer -= Time.deltaTime;
-
-        if (bounceTimer <= 0)
-        {
-            bounceTimer = 1;
-            bounced = false;
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("storyFloor"))
+        if (collision.gameObject.CompareTag("storyFloorH"))
         {
-            ContactPoint2D contact = collision.contacts[0];
-            Vector2 bounceDirection = new Vector2(transform.position.x - contact.point.x, transform.position.y - contact.point.y);
-            objectRb.AddForce(bounceDirection * bounceBack);
-            bounced = true;
+            Debug.Log("ouchH");
+            Vector2 bounceDirection = new Vector2(0f, 0f);
+
+            if (collision.gameObject.transform.position.y > transform.position.y)
+                bounceDirection = Vector2.down;
+            else if (collision.gameObject.transform.position.y < transform.position.y)
+                bounceDirection = Vector2.up;
+
             moveDirection = bounceDirection;
+            directionResetTimer = bounceTimer;
+        }
+
+        if (collision.gameObject.CompareTag("storyFloorV"))
+        {
+            Debug.Log("ouchV");
+            Vector2 bounceDirection = new Vector2(0f, 0f);
+
+            if (collision.gameObject.transform.position.x > transform.position.x)
+                bounceDirection = Vector2.left;
+            else if (collision.gameObject.transform.position.x < transform.position.x)
+                bounceDirection = Vector2.right;
+
+            moveDirection = bounceDirection;
+            directionResetTimer = bounceTimer;
         }
     }
 }

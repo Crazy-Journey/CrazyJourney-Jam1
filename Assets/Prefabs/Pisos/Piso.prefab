@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 3916268988130691864}
   m_Layer: 6
   m_Name: Visual (1)
-  m_TagString: Untagged
+  m_TagString: storyFloorH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4337106242063909022}
   m_Layer: 0
   m_Name: Visual (2)
-  m_TagString: Untagged
+  m_TagString: storyFloorV
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 5246945139074496993}
   m_Layer: 0
   m_Name: Visual (3)
-  m_TagString: Untagged
+  m_TagString: storyFloorV
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 1900889880719123441}
   m_Layer: 6
   m_Name: Visual
-  m_TagString: Untagged
+  m_TagString: storyFloorH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
