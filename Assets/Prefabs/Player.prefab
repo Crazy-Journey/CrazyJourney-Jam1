@@ -539,8 +539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16557bc090d87642ab03fc13099b6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 6
   objectRb: {fileID: 1084216011251414985}
+  playerAnimations: {fileID: 0}
+  jumpForce: 6
   debugInfo: 0
   canJump: 1
 --- !u!1 &7320978095230871895
@@ -600,6 +601,7 @@ GameObject:
   - component: {fileID: 7965535208045440318}
   - component: {fileID: 8548122719789242088}
   - component: {fileID: 6153233320487237909}
+  - component: {fileID: 6547147584867639825}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -695,3 +697,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6547147584867639825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786743330037175651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a059e114b825f8498ad0617808042a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectRb: {fileID: 1084216011251414985}

@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerJump : MonoBehaviour
 {
-    [SerializeField] private float jumpForce = 10;
-
     [SerializeField] Rigidbody2D objectRb;
 
+    [SerializeField] PlayerAnimations playerAnimations;
+
+    [SerializeField] private float jumpForce = 10;
+    
     [SerializeField] bool debugInfo;
 
     public bool canJump;
@@ -17,7 +19,11 @@ public class PlayerJump : MonoBehaviour
     {
         if (Physics2D.Raycast(transform.position - Vector3.up * 0.1f, Vector3.down, 0.2f))
         {
-            canJump = true;
+            if (!canJump)
+            {
+                canJump = true;
+                playerAnimations.OnGround();
+            }      
 
             if (debugInfo)
                 Debug.DrawRay(transform.position - Vector3.up * 0.01f, Vector3.down * 0.2f, Color.green);
@@ -39,6 +45,7 @@ public class PlayerJump : MonoBehaviour
         {
             objectRb.velocity = new Vector2(objectRb.velocity.x, 0.0f);
             objectRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            playerAnimations.OnJump();
         }
     }
 
