@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectRb: {fileID: 1084216011251414985}
-  playerAnimations: {fileID: 0}
+  playerAnimations: {fileID: 6547147584867639825}
   jumpForce: 6
   debugInfo: 0
   canJump: 1

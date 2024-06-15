@@ -721,7 +721,7 @@ MonoBehaviour:
   enemyLife: 4
   enemyPowerDrop: 4
   enemyCoinDrop: 4
-  enemySpeed: 4
+  enemySpeed: 2
   spawnRate: 1
 --- !u!1001 &1059371289333780472
 PrefabInstance:
