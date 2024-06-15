@@ -25,11 +25,17 @@ public class ElevatorComponent : MonoBehaviour
 
 
     private Transform movingPlayer = null;
+    private DetectElevator playerDetectElevator = null;
 
     public void setMovingPlayer(Transform newMovingPlayer)
     {
         movingPlayer = newMovingPlayer; 
-    } 
+    }
+
+    public void setPlayerDetectElevator(DetectElevator newDetect)
+    {
+        playerDetectElevator = newDetect;
+    }
 
     public void SubirPiso(int cantidad = 1)
     {
@@ -100,6 +106,15 @@ public class ElevatorComponent : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.01f);
         }
 
+
+        if(playerDetectElevator != null)
+        {
+            playerDetectElevator.ExitElevator();
+        }
+
+
+        movingPlayer = null;    
+        playerDetectElevator = null;
 
 
     }

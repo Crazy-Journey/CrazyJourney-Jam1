@@ -99,11 +99,13 @@ public class DetectElevator : MonoBehaviour
             //cambiar por transicion
             playerContainer.transform.position = lastElevator.transform.position;
 
-            playerContainer.GetComponent<CapsuleCollider2D>().isTrigger = true;  
+            playerContainer.GetComponent<CapsuleCollider2D>().isTrigger = true;
 
-            lastElevator.GetComponentInChildren<ElevatorComponent>().setMovingPlayer(playerContainer.transform);
+            ElevatorComponent elevatorComponent = lastElevator.GetComponentInChildren<ElevatorComponent>();
 
-            lastElevator.GetComponentInChildren<ElevatorComponent>().BajarPiso();
+            elevatorComponent.setMovingPlayer(playerContainer.transform);
+            elevatorComponent.setPlayerDetectElevator(this);
+            elevatorComponent.BajarPiso();
 
 
         }
