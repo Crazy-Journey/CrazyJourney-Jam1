@@ -6,7 +6,7 @@ public class SpawnSystem : MonoBehaviour
 {
 
     [SerializeField] Transform objectTr;
-
+    [SerializeField] PlayerId playerId;
 
     private Transform pisosContainer;
     private List<Piso> pisos = new List<Piso>();
@@ -16,14 +16,9 @@ public class SpawnSystem : MonoBehaviour
     {
         GetPisos();
 
-        SpawnOnPiso(0);
+        SpawnOnPiso();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void GetPisos()
     {
@@ -38,19 +33,16 @@ public class SpawnSystem : MonoBehaviour
         }
     }
 
-    public void SpawnOnPiso(int p)
+    public void SpawnOnPiso()
     {
-        Spawner[] spawners = pisos[p].GetComponentsInChildren<Spawner>();
+        // Obtenemos el piso objetivo a partir del data del player
+        int targetPiso = PlayerDataManager.THIS.Player(playerId.GetPlayerId()).GetPiso();
 
-        foreach (Spawner spawner in spawners)
-        {
-            if (!spawner.IsUsed())
-            {
-                objectTr.position = spawner.transform.position;
-                spawner.SetSpawnUsed(true);
-                break;
-            }
-        }
+        // Obtenemos los spawners del piso objetivo
+        Spawner[] spawners = pisos[targetPiso].GetComponentsInChildren<Spawner>();
+        print("Id en spawn:" + playerId.GetPlayerId());
+        // Obtenemos el spawner correspondiente al player según su id
+        objectTr.position = spawners[playerId.GetPlayerId()].transform.position;
     }
 
 
