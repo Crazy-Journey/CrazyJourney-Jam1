@@ -31,11 +31,17 @@ public class PlayerAnimations : MonoBehaviour
 
     public void OnDeath()
     {
-        animator.SetTrigger("Death");
+        animator.SetBool("Death", true);
+    }
+
+    public void OnRespawn()
+    {
+        animator.SetBool("Death", false);
     }
 
     public void OnHit()
     {
-        animator.SetTrigger("Hit");
+        if(!animator.GetBool("Death"))
+            animator.SetTrigger("Hit");
     }
 }

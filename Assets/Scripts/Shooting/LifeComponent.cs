@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LifeComponent : MonoBehaviour
 {
-
+    bool onDeath = false;
     public enum EntityType
     {
         Player,
@@ -96,33 +96,9 @@ public class LifeComponent : MonoBehaviour
     {
         if(type == EntityType.Player)
         {
-
-            //Subimos el ascensor de pisos
-            GameObject elevator = GetComponentInChildren<DetectElevator>().lastElevator;
-
-            if (elevator != null)
-                elevator.GetComponentInChildren<ElevatorComponent>().SubirPiso();
-
-            // Subimos el player un pisito
-            int myId = GetComponentInChildren<PlayerId>().GetPlayerId();
-            var data = PlayerDataManager.THIS.GetPlayer(myId);
-            data.SetPiso(math.clamp(PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPiso() - 1,0,7));
-            PlayerDataManager.THIS.SetPlayer(myId,data);
-
-
-            // Spawneamos en el nuevo piso
-            GetComponentInChildren<SpawnSystem>().SpawnOnPiso();
-
-            // Player pierde una parte de poder
-            PlayerDataManager.PlayerData _player = PlayerDataManager.THIS.GetPlayer(myId);
-            _player.PowerMultiplier(0.8f);
-            PlayerDataManager.THIS.SetPlayer(myId, _player);
-
-            // Reseteamos la vida
-            currentLife = maxlife;
-
-            if (hpBar != null)
-                hpBar.UpdateBar(currentLife, maxlife);
+            if(!onDeath)
+                StartCoroutine(DeathCoroutine());
+            
         }
 
         if(type == EntityType.Enemy)
@@ -153,6 +129,46 @@ public class LifeComponent : MonoBehaviour
         }
 
 
-        
+       
+    }
+
+    IEnumerator DeathCoroutine()
+    {
+        onDeath = true;
+
+        playerAnimations.OnDeath();
+
+        yield return new WaitForSecondsRealtime(2f);
+
+        playerAnimations.OnRespawn();
+
+        //Subimos el ascensor de pisos
+        GameObject elevator = GetComponentInChildren<DetectElevator>().lastElevator;
+
+        if (elevator != null)
+            elevator.GetComponentInChildren<ElevatorComponent>().SubirPiso();
+
+        // Subimos el player un pisito
+        int myId = GetComponentInChildren<PlayerId>().GetPlayerId();
+        var data = PlayerDataManager.THIS.GetPlayer(myId);
+        data.SetPiso(math.clamp(PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPiso() - 1, 0, 7));
+        PlayerDataManager.THIS.SetPlayer(myId, data);
+
+
+        // Spawneamos en el nuevo piso
+        GetComponentInChildren<SpawnSystem>().SpawnOnPiso();
+
+        // Player pierde una parte de poder
+        PlayerDataManager.PlayerData _player = PlayerDataManager.THIS.GetPlayer(myId);
+        _player.PowerMultiplier(0.8f);
+        PlayerDataManager.THIS.SetPlayer(myId, _player);
+
+        // Reseteamos la vida
+        currentLife = maxlife;
+
+        if (hpBar != null)
+            hpBar.UpdateBar(currentLife, maxlife);
+
+        onDeath = false;
     }
 }
