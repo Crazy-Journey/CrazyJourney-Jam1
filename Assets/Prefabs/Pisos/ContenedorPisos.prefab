@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6451926190790127443}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ContenedorPisos
   m_TagString: ContenedorPisos
   m_Icon: {fileID: 0}

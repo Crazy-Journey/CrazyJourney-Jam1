@@ -24,31 +24,6 @@ public class ElevatorComponent : MonoBehaviour
     private List<Piso> pisos = new List<Piso>();
 
 
-    #region Raycast
-
-    [Header("Raycast")]
-
-    [SerializeField]
-    private bool IsLeft;
-
-    [SerializeField]
-    private Transform RaycastOrigin;
-
-    [SerializeField]
-    private Vector2 RaycastDir;
-
-    [SerializeField]
-    private float RaycastDistance;
-
-    [SerializeField]
-    private bool PlayerDetected;
-
-    [SerializeField]
-    private LayerMask playerMask;
-    #endregion
-
-
-
     public void SubirPiso(int cantidad = 1)
     {
         currentFloor -= cantidad;
@@ -67,13 +42,7 @@ public class ElevatorComponent : MonoBehaviour
         StartCoroutine(MoveElevator());
     }
 
-    private void detectPlayer()
-    {
 
-        RaycastHit2D hit = Physics2D.Raycast(RaycastOrigin.position, RaycastDir, RaycastDistance, playerMask);
-
-        PlayerDetected = hit.rigidbody != null;       
-    }
 
     private int formulaEscalado(int n)
     {
@@ -86,9 +55,6 @@ public class ElevatorComponent : MonoBehaviour
     void Start()
     {
 
-        RaycastDir = IsLeft ? new Vector2(-1, 0) : new Vector2(1, 0);
-
- 
         for (int i = 0;i < Nfloors; i++)
         {
             floorCosts.Add(formulaEscalado(i));
@@ -109,12 +75,6 @@ public class ElevatorComponent : MonoBehaviour
         transition();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        detectPlayer();
-    }
-
     IEnumerator MoveElevator()
     {
         float distance = pisos[currentFloor].GetElevatorHeightTarget() - transform.parent.position.y;
@@ -128,8 +88,6 @@ public class ElevatorComponent : MonoBehaviour
         }
 
     }
-
-
     public float getFloorCost(int i)
     {
         if (i < 0 || i > Nfloors)
