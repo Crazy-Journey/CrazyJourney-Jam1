@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class LifeComponent : MonoBehaviour
@@ -34,6 +35,13 @@ public class LifeComponent : MonoBehaviour
 
     [SerializeField]
     private PlayerAnimations playerAnimations;
+
+
+    [SerializeField]
+    private GameObject actionMapContainer = null;
+
+    private InputActionMap actionMap;
+
     public void SetLifeRegen(float _lifeRegen)
     {
         lifeRegen = _lifeRegen;
@@ -48,6 +56,14 @@ public class LifeComponent : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        if(actionMapContainer != null)
+        {
+            actionMap = actionMapContainer.GetComponent<PlayerInput>().currentActionMap;
+        }
+
+    }
     private void Start()
     {
         currentLife = maxlife;
@@ -138,8 +154,13 @@ public class LifeComponent : MonoBehaviour
 
         playerAnimations.OnDeath();
 
+
+        actionMap.Disable();
+
+
         GetComponent<CapsuleCollider2D>().offset = new Vector2(0f, 0.35f);
         GetComponent<CapsuleCollider2D>().size = new Vector2(0.7f, 0.7f);
+
 
         yield return new WaitForSecondsRealtime(2f);
 
@@ -176,5 +197,9 @@ public class LifeComponent : MonoBehaviour
             hpBar.UpdateBar(currentLife, maxlife);
 
         onDeath = false;
+
+
+        actionMap.Enable();
+
     }
 }
