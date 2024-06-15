@@ -225,5 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797fd56272d26d847a8a58ba33ef99aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 10
+  currentLife: 0
+  maxlife: 3
   type: 0
