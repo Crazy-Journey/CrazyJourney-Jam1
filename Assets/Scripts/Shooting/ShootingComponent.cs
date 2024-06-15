@@ -65,12 +65,14 @@ public class ShootingComponent : MonoBehaviour
             newBullet.GetComponent<BulletComponent>().setOwner(OwnerObject);
             newBullet.GetComponent<BulletComponent>().setDamage(bulletDamage);
 
+            StartCoroutine(Camera.main.GetComponent<CameraManager>().CameraShake());
+
         }
     }
 
     public void Shoot(InputAction.CallbackContext context)
     {        
-        shooting = context.started ? true : context.canceled ? false : true;    
+        shooting = context.started ? true : context.canceled ? false : true;
     }
 
     public void Look(InputAction.CallbackContext context)
