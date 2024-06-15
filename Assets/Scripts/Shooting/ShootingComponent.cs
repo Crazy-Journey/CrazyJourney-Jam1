@@ -38,6 +38,8 @@ public class ShootingComponent : MonoBehaviour
 
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,12 +83,28 @@ public class ShootingComponent : MonoBehaviour
         if(context.ReadValue<Vector2>() != new Vector2(0, 0))
         {
             shootDir = context.ReadValue<Vector2>();
+            FlipX(shootDir);
         }
+
     }
 
     public void SetBulletDamage(float dmg)
     {
         bulletDamage = dmg;
+    }
+
+    private void FlipX(Vector2 aim)
+    {
+
+        if(aim.x <= 0)
+        {
+            VisualElement.flipX = true; 
+        }
+        else
+        {
+            VisualElement.flipX = false;
+        }
+
     }
 
 }
