@@ -17,11 +17,11 @@ public class PlayerMovement : MonoBehaviour
     {
         objectRb.velocity = new Vector3(movementInput.x * speed, objectRb.velocity.y, 0f);
 
-        if (objectRb.velocity != Vector2.zero)
-            pAnimator.SetBool("Moving", true);
+        //if (objectRb.velocity != Vector2.zero)
+        //    pAnimator.SetBool("Moving", true);
 
-        else if (objectRb.velocity == Vector2.zero)
-            pAnimator.SetBool("Moving", false);
+        //else if (objectRb.velocity == Vector2.zero)
+        //    pAnimator.SetBool("Moving", false);
     }
 
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();

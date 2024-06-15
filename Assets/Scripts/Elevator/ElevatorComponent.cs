@@ -66,7 +66,7 @@ public class ElevatorComponent : MonoBehaviour
 
     private int formulaEscalado(int n)
     {
-        return (n+1)*100;
+        return (n+1)*10;
     }
 
     
@@ -125,7 +125,7 @@ public class ElevatorComponent : MonoBehaviour
         isMoving = false;   
 
     }
-    public float getFloorCost(int i)
+    public int getFloorCost(int i)
     {
         if (i < 0 || i > Nfloors)
         {

@@ -83,7 +83,7 @@ public class LifeComponent : MonoBehaviour
             // Seteamos nuestro piso al piso del player que nos ha matado
             int myId = GetComponentInChildren<PlayerId>().GetPlayerId();
             var data = PlayerDataManager.THIS.GetPlayer(myId);
-            data.SetPiso(math.clamp(PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPiso(),0,7));
+            data.SetPiso(math.clamp(PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPiso() - 1,0,7));
             PlayerDataManager.THIS.SetPlayer(myId,data);
 
 

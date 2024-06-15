@@ -93,13 +93,23 @@ public class DetectElevator : MonoBehaviour
 
         if(!isInElevator && ElevatorDetected && context.started)
         {
-            if (true)//si no hay dinero, return
-            {
 
-            }
             ElevatorComponent elevatorComponent = lastElevator.GetComponentInChildren<ElevatorComponent>();
 
-            if (elevatorComponent.IsMoving()) { return; }
+            int myId = GetComponentInParent<PlayerId>().GetPlayerId();
+            int myCoins = PlayerDataManager.THIS.GetPlayer(myId).GetCoins();
+            int elevatorCost = elevatorComponent.getFloorCost(PlayerDataManager.THIS.GetPlayer(myId).GetPiso());
+            if (myCoins < elevatorCost) //si no hay dinero, salimos de aquí
+                return;            
+
+            if (elevatorComponent.IsMoving()) 
+                return;
+
+            // Player pierde las coins del coste
+            PlayerDataManager.PlayerData _player = PlayerDataManager.THIS.GetPlayer(myId);
+            _player.ChangeCoins(-elevatorCost);
+            PlayerDataManager.THIS.SetPlayer(myId, _player);
+
 
             elevatorComponent.startMoving();
 
