@@ -20,6 +20,6 @@ public class PinataManager : MonoBehaviour
     {
         spawner.PinataDied();
         GameObject effect = Instantiate(particleEffect, transform.position, Quaternion.identity) as GameObject;
-        Destroy(effect, 10f);
+        Destroy(effect, 2f);
     }
 }
