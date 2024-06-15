@@ -13,6 +13,8 @@ public class LifeComponent : MonoBehaviour
     [SerializeField]
     private int type;
 
+    [SerializeField] UpdateHPbar hpBar;
+
     private PinataManager manager;
 
     private void Start()
@@ -22,7 +24,8 @@ public class LifeComponent : MonoBehaviour
     }
     public void ReciveDamage(float damage, GameObject bulletOwner)
     {
-        currentLife -= damage; 
+        currentLife -= damage;
+        hpBar.UpdateBar(currentLife, maxlife);
 
         if (currentLife <= 0)
         {
