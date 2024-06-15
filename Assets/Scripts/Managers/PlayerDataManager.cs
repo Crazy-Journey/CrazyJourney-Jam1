@@ -109,6 +109,12 @@ public class PlayerDataManager : MonoBehaviour
         //Debug.Log("Player 2 Coins: " + playerData[1].GetCoins());
     }
 
+
+    /// <summary>
+    /// IMPORTANTE NO SETEAR COSAS DESDE AQUI, EN SU LUGAR USAR SET PLAYER
+    /// </summary>
+    /// <param name="p"></param>
+    /// <returns></returns>
     public PlayerData GetPlayer(int p)
     {
         return playerData[p];

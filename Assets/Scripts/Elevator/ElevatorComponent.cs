@@ -44,6 +44,8 @@ public class ElevatorComponent : MonoBehaviour
 
     public void SubirPiso(int cantidad = 1)
     {
+        if (currentFloor == 0) return;
+
         currentFloor -= cantidad;
 
         transition();

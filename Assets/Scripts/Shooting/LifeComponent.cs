@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class LifeComponent : MonoBehaviour
@@ -26,7 +27,8 @@ public class LifeComponent : MonoBehaviour
 
     private PinataManager manager;
 
-
+    [SerializeField]
+    private PlayerId playerId;
     public void SetLifeRegen(float _lifeRegen)
     {
         lifeRegen = _lifeRegen;
@@ -75,19 +77,22 @@ public class LifeComponent : MonoBehaviour
         if(type == EntityType.Player)
         {
             // Obtenemos el piso del player que nos ha matado
-            int bulletOwnerId = bulletOwner.GetComponentInChildren<PlayerId>().GetPlayerId();
-            int targetPiso = PlayerDataManager.THIS.GetPlayer(bulletOwnerId).GetPiso();
+            //int bulletOwnerId = bulletOwner.GetComponentInChildren<PlayerId>().GetPlayerId();
+            //int targetPiso = PlayerDataManager.THIS.GetPlayer(bulletOwnerId).GetPiso();
 
             // Seteamos nuestro piso al piso del player que nos ha matado
             int myId = GetComponentInChildren<PlayerId>().GetPlayerId();
-            PlayerDataManager.THIS.GetPlayer(myId).SetPiso(targetPiso);
+            var data = PlayerDataManager.THIS.GetPlayer(myId);
+            data.SetPiso(math.clamp(PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPiso(),0,7));
+            PlayerDataManager.THIS.SetPlayer(myId,data);
+
 
             // Spawneamos en el nuevo piso
             GetComponentInChildren<SpawnSystem>().SpawnOnPiso();
 
             // Player pierde una parte de poder
             PlayerDataManager.PlayerData _player = PlayerDataManager.THIS.GetPlayer(myId);
-            _player.PowerMultiplier(0.5f);
+            _player.PowerMultiplier(0.8f);
             PlayerDataManager.THIS.SetPlayer(myId, _player);
 
             currentLife = maxlife;

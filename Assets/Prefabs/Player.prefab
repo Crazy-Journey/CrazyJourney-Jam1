@@ -263,6 +263,7 @@ MonoBehaviour:
   lifeRegen: 0
   type: 0
   hpBar: {fileID: 0}
+  playerId: {fileID: 2839472815869267500}
 --- !u!1 &3762668272761809257
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   objectRb: {fileID: 1084216011251414985}
+  pAnimator: {fileID: 0}
 --- !u!1 &8786743330037175651
 GameObject:
   m_ObjectHideFlags: 0
