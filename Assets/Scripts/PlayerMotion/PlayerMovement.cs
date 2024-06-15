@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D objectRb;
 
 
-    void Update()
+    void FixedUpdate()
     {
         objectRb.velocity = new Vector3(movementInput.x * speed, objectRb.velocity.y, 0f);
     }
