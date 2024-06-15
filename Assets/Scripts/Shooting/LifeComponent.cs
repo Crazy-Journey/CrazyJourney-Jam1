@@ -47,6 +47,15 @@ public class LifeComponent : MonoBehaviour
     {
         currentLife = maxlife;
         manager = GetComponent<PinataManager>();
+        if (type == EntityType.Player)
+        {
+            if (playerId.GetPlayerId() == 0)
+                hpBar = GameObject.Find("P1HPBar").GetComponent<UpdateHPbar>();
+
+            else if (playerId.GetPlayerId() == 1)
+                hpBar = GameObject.Find("P2HPBar").GetComponent<UpdateHPbar>();
+        }
+            
     }
 
     private void Update()
@@ -78,7 +87,10 @@ public class LifeComponent : MonoBehaviour
         {
 
             //Subimos el ascensor de pisos
-            GetComponentInChildren<DetectElevator>().lastElevator.GetComponentInChildren<ElevatorComponent>().SubirPiso();
+            GameObject elevator = GetComponentInChildren<DetectElevator>().lastElevator;
+
+            if (elevator != null)
+                elevator.GetComponentInChildren<ElevatorComponent>().SubirPiso();
 
             // Subimos el player un pisito
             int myId = GetComponentInChildren<PlayerId>().GetPlayerId();
@@ -98,7 +110,8 @@ public class LifeComponent : MonoBehaviour
             // Reseteamos la vida
             currentLife = maxlife;
 
-
+            if (hpBar != null)
+                hpBar.UpdateBar(currentLife, maxlife);
         }
 
         if(type == EntityType.Enemy)
