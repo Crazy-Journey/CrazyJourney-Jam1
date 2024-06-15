@@ -66,7 +66,14 @@ public class ElevatorComponent : MonoBehaviour
 
     private int formulaEscalado(int n)
     {
-        return (n+1)*10;
+        if (n == 0) return 10;
+        if (n == 1) return 15;
+        if (n == 2) return 20;
+        if (n == 3) return 30;
+        if (n == 4) return 50;
+
+
+        return (int)(Mathf.Pow(2,n) * 10f);
     }
 
     

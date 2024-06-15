@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
     private float enemyLife;
 
     [SerializeField]
-    private int enemyPowerDrop;
+    private float enemyPowerDrop;
 
     [SerializeField]
     private int enemyCoinDrop;

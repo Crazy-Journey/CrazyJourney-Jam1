@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PinataManager : MonoBehaviour
 {
-    public int powerDrop, coinDrop;
+    public float powerDrop;
+    public int coinDrop;
     [SerializeField] GameObject particleEffect;
 
     private EnemySpawner spawner;

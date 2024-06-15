@@ -11,7 +11,7 @@ public class PisosData : MonoBehaviour
     {
         public int maxEnemies;
         public float life;
-        public int powerDrop;
+        public float powerDrop;
         public int coinDrop;
         public float speed;
 

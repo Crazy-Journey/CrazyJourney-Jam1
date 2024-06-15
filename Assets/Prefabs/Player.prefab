@@ -258,9 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797fd56272d26d847a8a58ba33ef99aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 5
-  maxlife: 5
-  lifeRegen: 0
+  currentLife: 50
+  maxlife: 50
+  lifeRegen: 1
   type: 0
   hpBar: {fileID: 0}
   playerId: {fileID: 2839472815869267500}
