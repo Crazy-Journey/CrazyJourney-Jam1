@@ -648,7 +648,8 @@ MonoBehaviour:
   enemyPowerDrop: 4
   enemyCoinDrop: 4
   enemySpeed: 2
-  spawnRate: 1
+  minSpawnRate: 0.8
+  maxSpawnRate: 1.2
 --- !u!1 &3987908467298102436
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +978,8 @@ MonoBehaviour:
   enemyPowerDrop: 4
   enemyCoinDrop: 4
   enemySpeed: 2
-  spawnRate: 1
+  minSpawnRate: 0.8
+  maxSpawnRate: 1.2
 --- !u!1001 &1059371289333780472
 PrefabInstance:
   m_ObjectHideFlags: 0
