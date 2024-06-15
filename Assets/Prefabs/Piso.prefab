@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  elevatorHeightTarget: 0
+  elevatorTarget: {fileID: 2963194737022611}
 --- !u!1 &687114051857772741
 GameObject:
   m_ObjectHideFlags: 0
