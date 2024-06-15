@@ -33,6 +33,11 @@ public class ShootingComponent : MonoBehaviour
     private Transform SpawnPoint;
 
 
+    [SerializeField]
+    private SpriteRenderer VisualElement;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,13 +50,18 @@ public class ShootingComponent : MonoBehaviour
         elapsedTime += Time.deltaTime;
 
 
-        if (shooting && shootDir != new Vector2(0,0) &&  elapsedTime >= fireRate)
+        if (shooting  &&  elapsedTime >= fireRate)
         {
 
             elapsedTime = 0;
 
             GameObject newBullet = Instantiate(bulletPrefab, SpawnPoint.position, Quaternion.identity);
-            newBullet.GetComponent<BulletComponent>().setVelocity(shootDir);
+            newBullet.GetComponent<BulletComponent>().setVelocity(
+                shootDir != new Vector2(0,0) ?shootDir : 
+                VisualElement.flipX ? new Vector2(-1,0) :
+                new Vector2(1,0));
+
+
             newBullet.GetComponent<BulletComponent>().setOwner(OwnerObject);
             newBullet.GetComponent<BulletComponent>().setDamage(bulletDamage);
 
