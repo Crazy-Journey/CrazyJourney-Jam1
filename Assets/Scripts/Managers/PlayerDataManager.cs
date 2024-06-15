@@ -62,6 +62,11 @@ public class PlayerDataManager : MonoBehaviour
         {
             return _piso;
         }
+
+        public void PowerMultiplier(float multiplier)
+        {
+            _power *= multiplier;
+        }
     }
 
     private List<PlayerData> playerData = new List<PlayerData>();

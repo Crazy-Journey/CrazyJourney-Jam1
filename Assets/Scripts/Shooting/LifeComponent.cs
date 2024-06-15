@@ -72,7 +72,6 @@ public class LifeComponent : MonoBehaviour
 
     private void Die(GameObject bulletOwner)
     {
-        print("muerto");
         if(type == EntityType.Player)
         {
             // Obtenemos el piso del player que nos ha matado
@@ -86,16 +85,19 @@ public class LifeComponent : MonoBehaviour
             // Spawneamos en el nuevo piso
             GetComponentInChildren<SpawnSystem>().SpawnOnPiso();
 
-            currentLife = maxlife;
+            // Player pierde una parte de poder
+            PlayerDataManager.PlayerData _player = PlayerDataManager.THIS.GetPlayer(myId);
+            _player.PowerMultiplier(0.5f);
+            PlayerDataManager.THIS.SetPlayer(myId, _player);
 
-            // TAMBIEN PERDEMOS UN POCO DE PODER // TO DO
+            currentLife = maxlife;
         }
 
         if(type == EntityType.Enemy)
         {
             int bulletOwnerId = bulletOwner.GetComponentInChildren<PlayerId>().GetPlayerId();
 
-            // LE DAMOS NUESTRO DROP AL JUGADOR QUE NOS HA MATADO //
+            // Le damos nuestro drop al jugador que nos ha matado
             PlayerDataManager.PlayerData _player = PlayerDataManager.THIS.GetPlayer(bulletOwnerId);
 
             _player.ChangePower(+manager.powerDrop);
