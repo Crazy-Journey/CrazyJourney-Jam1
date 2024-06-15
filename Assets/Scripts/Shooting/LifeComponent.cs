@@ -80,6 +80,7 @@ public class LifeComponent : MonoBehaviour
     {
         currentLife -= damage;
 
+        if(playerAnimations != null)
         playerAnimations.OnHit();
 
         if (hpBar != null)
