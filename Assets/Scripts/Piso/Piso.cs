@@ -10,11 +10,12 @@ public class Piso : MonoBehaviour
     [SerializeField] Transform elevatorTarget; 
     private float elevatorHeightTarget;
 
-    private void Start()
+    private void Awake()
     {
-        elevatorHeightTarget = elevatorTarget.position.y;
-    }
+        elevatorHeightTarget = transform.position.y;
 
+    }
+ 
     public int GetId() { return id; }
 
     public float GetElevatorHeightTarget() {  return elevatorHeightTarget; }
