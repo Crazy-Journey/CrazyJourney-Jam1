@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 9071599943194410463}
   m_Layer: 10
   m_Name: Elevator
-  m_TagString: Untagged
+  m_TagString: storyFloorV
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
