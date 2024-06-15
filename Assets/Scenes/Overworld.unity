@@ -203,11 +203,11 @@ PrefabInstance:
       objectReference: {fileID: 517533433}
     - target: {fileID: 2110382648153218913, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.15
+      value: 7.46
       objectReference: {fileID: 0}
     - target: {fileID: 2110382648153218913, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.28
+      value: -9.61
       objectReference: {fileID: 0}
     - target: {fileID: 2110382648153218913, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -259,20 +259,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 655154235169362129, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
-      propertyPath: IsLeft
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 655154235169362129, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
       propertyPath: PisosContainer
       value: 
       objectReference: {fileID: 517533433}
     - target: {fileID: 2110382648153218913, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.14
+      value: -7.44
       objectReference: {fileID: 0}
     - target: {fileID: 2110382648153218913, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.89
+      value: -9.63
       objectReference: {fileID: 0}
     - target: {fileID: 2110382648153218913, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
       propertyPath: m_LocalPosition.z
