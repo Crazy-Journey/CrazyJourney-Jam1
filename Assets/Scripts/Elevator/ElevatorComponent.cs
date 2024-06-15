@@ -28,9 +28,13 @@ public class ElevatorComponent : MonoBehaviour
 
     private Transform movingPlayer = null;
     private DetectElevator playerDetectElevator = null;
+
     private bool isMoving = false;
     public void startMoving() { isMoving = true; }
-    public bool IsMoving() {  return isMoving; }    
+    public bool IsMoving() {  return isMoving; }
+
+    [SerializeField]
+    private GameObject colliderContainer;
 
     public void setMovingPlayer(Transform newMovingPlayer)
     {
@@ -104,6 +108,8 @@ public class ElevatorComponent : MonoBehaviour
 
     IEnumerator MoveElevator()
     {
+        colliderContainer.GetComponent<Collider2D>().isTrigger = true;
+
         float distance = pisos[currentFloor].GetElevatorHeightTarget() - transform.parent.position.y;
 
         for (int i = 0; i < 50;i++)
@@ -129,7 +135,9 @@ public class ElevatorComponent : MonoBehaviour
 
         movingPlayer = null;    
         playerDetectElevator = null;
-        isMoving = false;   
+        isMoving = false;
+
+        colliderContainer.GetComponent<Collider2D>().isTrigger = false;
 
     }
     public int getFloorCost(int i)

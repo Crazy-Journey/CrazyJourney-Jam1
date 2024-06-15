@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 9071599943194410463}
   m_Layer: 10
   m_Name: Elevator
-  m_TagString: Untagged
+  m_TagString: storyFloorV
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &9030968309228604665
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,3 +238,4 @@ MonoBehaviour:
   currentFloor: 0
   Nfloors: 7
   PisosContainer: {fileID: 0}
+  colliderContainer: {fileID: 6365517805900282375}
