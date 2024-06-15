@@ -43,7 +43,11 @@ public class DetectElevator : MonoBehaviour
     public void ExitElevator()
     {
         //reactivar input
-        actionMap.Enable(); 
+        actionMap.Enable();
+       
+        //reactivar collider 
+        playerContainer.GetComponent<CapsuleCollider2D>().isTrigger = false;
+
         isInElevator = false;
     }
 
@@ -80,13 +84,27 @@ public class DetectElevator : MonoBehaviour
 
         if(!isInElevator && ElevatorDetected && context.started)
         {
+            if (true)//si no hay dinero, return
+            {
+
+            }
+
+
             print("entra ascensor");
             isInElevator = true;
 
             //desactivar input
             actionMap.Disable();
 
+            //cambiar por transicion
             playerContainer.transform.position = lastElevator.transform.position;
+
+            playerContainer.GetComponent<CapsuleCollider2D>().isTrigger = true;  
+
+            lastElevator.GetComponentInChildren<ElevatorComponent>().setMovingPlayer(playerContainer.transform);
+
+            lastElevator.GetComponentInChildren<ElevatorComponent>().BajarPiso();
+
 
         }
 
