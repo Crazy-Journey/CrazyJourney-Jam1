@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+// Para usar el camera shake, enchufamos la siguiente linea:
+//
+// StartCoroutine(Camera.main.GetComponent<CameraManager>().CameraShake());
+//
+
 public class CameraManager : MonoBehaviour
 { 
-    [SerializeField] CinemachineVirtualCamera vCam;
+    [SerializeField] private CinemachineVirtualCamera vCam;
+
     public IEnumerator CameraShake(float shakeIntensity = 3f, float shakeTiming = 0.2f)
     {
         Noise(1, shakeIntensity);
