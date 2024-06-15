@@ -57,7 +57,7 @@ public class ShootingComponent : MonoBehaviour
 
             GameObject newBullet = Instantiate(bulletPrefab, SpawnPoint.position, Quaternion.identity);
             newBullet.GetComponent<BulletComponent>().setVelocity(
-                shootDir != new Vector2(0,0) ?shootDir : 
+                shootDir != new Vector2(0,0) ? shootDir : 
                 VisualElement.flipX ? new Vector2(-1,0) :
                 new Vector2(1,0));
 
