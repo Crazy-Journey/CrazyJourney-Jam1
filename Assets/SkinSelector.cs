@@ -10,10 +10,4 @@ public class SkinSelector : MonoBehaviour
     {
         transform.GetChild(this.GetComponent<PlayerId>().playerId).gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
