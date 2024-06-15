@@ -14,6 +14,11 @@ public class PinataMovement : MonoBehaviour
     Vector2 moveDirection = new Vector2(0f, 0f);
 
 
+    public void setSpeed(float _speed)
+    {
+        speed = _speed;
+    }
+
     private void Start()
     {
         moveDirection.Set(0f - transform.position.x, 0f);
