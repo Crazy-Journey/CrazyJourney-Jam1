@@ -64,7 +64,7 @@ public class ElevatorComponent : MonoBehaviour
 
     private void transition()
     {
-
+        StartCoroutine(MoveElevator());
     }
 
     private void detectPlayer()
@@ -75,10 +75,12 @@ public class ElevatorComponent : MonoBehaviour
         PlayerDetected = hit.rigidbody != null;       
     }
 
-    private int FormulaEscalado(int n)
+    private int formulaEscalado(int n)
     {
         return (n+1)*100;
     }
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -89,7 +91,7 @@ public class ElevatorComponent : MonoBehaviour
  
         for (int i = 0;i < Nfloors; i++)
         {
-            floorCosts.Add(FormulaEscalado(i));
+            floorCosts.Add(formulaEscalado(i));
         }
 
 
@@ -103,6 +105,8 @@ public class ElevatorComponent : MonoBehaviour
             pisos.Add(PisosContainer.GetChild(i).gameObject.GetComponent<Piso>());
         }
 
+
+        transition();
     }
 
     // Update is called once per frame
@@ -110,4 +114,27 @@ public class ElevatorComponent : MonoBehaviour
     {
         detectPlayer();
     }
+
+    IEnumerator MoveElevator()
+    {
+        float distance = pisos[currentFloor].GetElevatorHeightTarget() - transform.parent.position.y;
+
+
+        print(currentFloor);
+        print(pisos[currentFloor].GetElevatorHeightTarget());
+
+
+        for (int i = 0; i < 50;i++)
+        {
+
+            transform.parent.position +=  new Vector3( 0,distance / 50,0);  
+
+          
+
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
+
+
+    }
+
 }
