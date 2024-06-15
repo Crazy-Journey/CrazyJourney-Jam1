@@ -6,6 +6,11 @@ using UnityEngine.InputSystem;
 public class DetectElevator : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject actionMapContainer;
+
+    private InputActionMap actionMap;
+
     [Header("Raycast")]
 
     [SerializeField]
@@ -20,7 +25,22 @@ public class DetectElevator : MonoBehaviour
     [SerializeField]
     private LayerMask elevatorMask;
 
-   
+    
+    private bool isInElevator = false;
+
+    private void Awake()
+    {
+        actionMap = actionMapContainer.GetComponent<PlayerInput>().currentActionMap;
+
+    }
+
+
+    public void ExitElevator()
+    {
+        //reactivar input
+        actionMap.Enable(); 
+        isInElevator = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,10 +59,14 @@ public class DetectElevator : MonoBehaviour
 
     public void InteractElevator(InputAction.CallbackContext context)
     {
-        if(ElevatorDetected && context.started)
+
+        if(!isInElevator && ElevatorDetected && context.started)
         {
             print("entra ascensor");
+            isInElevator = true;
 
+            //desactivar input
+            actionMap.Disable();
         }
 
     }
