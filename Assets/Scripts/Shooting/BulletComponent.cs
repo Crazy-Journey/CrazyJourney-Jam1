@@ -13,8 +13,6 @@ public class BulletComponent : MonoBehaviour
     private float damage;
 
 
-
-
     private void Awake()
     {
         myRb = GetComponent<Rigidbody2D>();
@@ -30,20 +28,32 @@ public class BulletComponent : MonoBehaviour
         myRb.velocity = velocity.normalized * customSpeed;
     }
 
-
     public void setOwner(GameObject _owner)
     {
         owner = _owner; 
     }
 
+    public void setDamage(float newDamage)
+    {
+        damage = newDamage;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("aaa");
         if (collision.gameObject != owner)
         {
+
+            LifeComponent otherLife = collision.gameObject.GetComponent<LifeComponent>();
+
+            if (otherLife != null)
+            {
+                otherLife.ReciveDamage(damage);
+            }
+
+
             if(collision.gameObject.layer != LayerMask.NameToLayer("Floor") ||
                 (collision.gameObject.layer == LayerMask.NameToLayer("Floor") &&
-                myRb.velocity.y <=0))
+                myRb.velocity.y >=0))
             {
                 Destroy(gameObject);
             }
