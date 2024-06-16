@@ -17,7 +17,7 @@ public class PlayerJump : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Physics2D.Raycast(transform.position - Vector3.up * 0.1f, Vector3.down, 0.2f, LayerMask.GetMask("Floor")))
+        if (Physics2D.Raycast(transform.position - Vector3.up * 0.1f, Vector3.down, 0.2f, LayerMask.GetMask("Floor", "FloorTilemap")))
         {
             if (!canJump)
             {
