@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverTrigger : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class GameOverTrigger : MonoBehaviour
         PlayerId playerId = collision.GetComponent<PlayerId>();
         if (playerId != null)
         {
-            GameManager.THIS.winnerwinnerChickenDinner = playerId.GetPlayerId() + 1;
+            GameManager.THIS.winnerwinnerChickenDinner = playerId.GetPlayerId();
+            SceneManager.LoadSceneAsync(3);
         }
     }
 }
