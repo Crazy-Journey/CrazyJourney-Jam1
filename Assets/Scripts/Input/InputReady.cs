@@ -10,6 +10,11 @@ public class InputReady : MonoBehaviour
 
     public static InputReady instance;
     int count = 0;
+
+
+    public GameObject panelReady1;
+    public GameObject panelReady2;
+
     private void Awake()
     {
         if(instance == null)
@@ -22,10 +27,15 @@ public class InputReady : MonoBehaviour
     public void PlayerConnected(PlayerInput input)
     {
         count++;    
-        print(count);
+
+        if(count == 1)
+        {
+            panelReady1.SetActive(false);
+        }
 
         if(count == 2) 
         {
+            panelReady2.SetActive(false);
             PlayersReady = true;        
         }
 
