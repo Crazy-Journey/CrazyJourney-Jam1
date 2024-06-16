@@ -49,7 +49,7 @@ MonoBehaviour:
   fireRate: 0.5
   bulletDamage: 1
   OwnerObject: {fileID: 1110024520146615666}
-  SpawnPoint: {fileID: 1416051041869660543}
+  SpawnPoint: {fileID: 5055620375152101798}
   VisualElement: {fileID: 8548122719789242088}
   playerId: {fileID: 2839472815869267500}
 --- !u!1 &724586159798119372

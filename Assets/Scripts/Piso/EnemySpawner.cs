@@ -73,9 +73,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void spawnEnemies()
     {
+        if (!InputReady.instance.PlayersReady) return;
+
         elapsedTime += Time.deltaTime;
 
-        if(elapsedTime > spawnRate && enemiesCount < maxEnemies)
+        if(elapsedTime > spawnRate && enemiesCount < maxEnemies )
         {
             elapsedTime = 0;
             spawnRate = Random.Range(minSpawnRate, maxSpawnRate);

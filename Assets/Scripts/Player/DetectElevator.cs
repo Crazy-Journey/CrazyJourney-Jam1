@@ -36,12 +36,19 @@ public class DetectElevator : MonoBehaviour
     [SerializeField]
     private PlayerId playerId;
 
+    private bool started = false;
+
     private void Awake()
     {
         actionMap = actionMapContainer.GetComponent<PlayerInput>().currentActionMap;
 
+        actionMap.Disable();
     }
 
+    private void Start()
+    {
+            
+    }
 
     public void ExitElevator()
     {
@@ -75,6 +82,16 @@ public class DetectElevator : MonoBehaviour
     void Update()
     {
         
+        if(!started)
+        {
+            if (InputReady.instance.PlayersReady)
+            {
+                actionMap.Enable();
+                started = true;
+            }
+
+        }
+
         detectElevator();   
     }
     private void detectElevator()
