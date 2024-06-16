@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
 
     [SerializeField] Rigidbody2D objectRb;
     
@@ -31,6 +31,7 @@ public class PlayerAnimations : MonoBehaviour
 
     public void OnDeath()
     {
+        
         animator.SetBool("Death", true);
     }
 
@@ -41,7 +42,12 @@ public class PlayerAnimations : MonoBehaviour
 
     public void OnHit()
     {
+        
         if(!animator.GetBool("Death"))
+        {
+            print("aa");
             animator.SetTrigger("Hit");
+        }
+            
     }
 }
