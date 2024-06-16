@@ -37,7 +37,7 @@ public class CameraManager : MonoBehaviour
         if (Mathf.Abs(pisoP1 - pisoP2) == 0) zoomTarget = 7;
         if (Mathf.Abs(pisoP1 - pisoP2) == 1) zoomTarget = 8;
         if (Mathf.Abs(pisoP1 - pisoP2) == 2) zoomTarget = 9.5f;
-        if (Mathf.Abs(pisoP1 - pisoP2) == 3) zoomTarget = 12f;
+        if (Mathf.Abs(pisoP1 - pisoP2) == 3) zoomTarget = 13f;
 
         float currentVel = 0.0f;
         vCam.m_Lens.OrthographicSize = Mathf.SmoothDamp(vCam.m_Lens.OrthographicSize, zoomTarget, ref currentVel, 0.05f);
