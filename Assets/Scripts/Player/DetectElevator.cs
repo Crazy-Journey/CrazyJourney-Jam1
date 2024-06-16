@@ -69,9 +69,9 @@ public class DetectElevator : MonoBehaviour
 
         print(transform.position);
         if(transform.parent.position.x <= 0)
-            transform.parent.position += new Vector3(2,0,0);
+            transform.parent.position = lastElevator.transform.position + new Vector3(2,0,0);
         else
-            transform.parent.position += new Vector3(-2.5f,0,0);
+            transform.parent.position = lastElevator.transform.position + new Vector3(-2.5f,0,0);
 
 
     }
