@@ -82,6 +82,9 @@ public class ShootingComponent : MonoBehaviour
 
             StartCoroutine(Camera.main.GetComponent<CameraManager>().CameraShake());
 
+            SoundManager.instance.playSound((int)SoundManager.CLIPS.SHOOT_2);
+
+
         }
     }
 

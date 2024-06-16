@@ -71,7 +71,7 @@ public class DetectElevator : MonoBehaviour
         if(transform.parent.position.x <= 0)
             transform.parent.position += new Vector3(2,0,0);
         else
-            transform.position += new Vector3(-2.5f,0,0);
+            transform.parent.position += new Vector3(-2.5f,0,0);
         print(transform.parent.position);
 
 
@@ -157,6 +157,10 @@ public class DetectElevator : MonoBehaviour
             elevatorComponent.setMovingPlayer(playerContainer.transform);
             elevatorComponent.setPlayerDetectElevator(this);
             elevatorComponent.BajarPiso();
+
+
+            SoundManager.instance.playSound((int)SoundManager.CLIPS.TAKE_ELEVATOR);
+
 
         }
 
