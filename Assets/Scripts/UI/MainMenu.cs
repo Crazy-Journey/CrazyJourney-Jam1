@@ -17,7 +17,12 @@ public class MainMenu : MonoBehaviour
     public void GoToOverworld()
     {
         SceneManager.LoadSceneAsync(2);
-    }   
+    }
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadSceneAsync(4);
+    }
 
     public void ExitGame()
     {
