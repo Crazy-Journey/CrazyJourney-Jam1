@@ -158,6 +158,10 @@ public class DetectElevator : MonoBehaviour
             elevatorComponent.setPlayerDetectElevator(this);
             elevatorComponent.BajarPiso();
 
+
+            SoundManager.instance.playSound((int)SoundManager.CLIPS.TAKE_ELEVATOR);
+
+
         }
 
     }

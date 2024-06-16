@@ -113,8 +113,13 @@ public class LifeComponent : MonoBehaviour
             Die(bulletOwner);
         }
 
-        else if (type == EntityType.Player)
+        if (type == EntityType.Player)
         {
+            SoundManager.instance.playSound((int)SoundManager.CLIPS.PLAYER_HIT);
+        }
+        else if (type == EntityType.Enemy)
+        {
+            SoundManager.instance.playSound((int)SoundManager.CLIPS.ENEMY_HIT);
 
         }
     }
@@ -162,6 +167,9 @@ public class LifeComponent : MonoBehaviour
     IEnumerator DeathCoroutine()
     {
         onDeath = true;
+
+        SoundManager.instance.playSound((int)SoundManager.CLIPS.DEATH);
+
 
         playerAnimations.OnDeath();
 
@@ -219,6 +227,9 @@ public class LifeComponent : MonoBehaviour
 
 
         actionMap.Enable();
+
+        SoundManager.instance.playSound((int)SoundManager.CLIPS.RESPAWN);
+
 
     }
 

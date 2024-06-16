@@ -46,6 +46,9 @@ public class PlayerJump : MonoBehaviour
             objectRb.velocity = new Vector2(objectRb.velocity.x, 0.0f);
             objectRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             playerAnimations.OnJump();
+
+            SoundManager.instance.playSound((int)SoundManager.CLIPS.JUMP);
+
         }
     }
 
