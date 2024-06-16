@@ -6688,7 +6688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2723299040772014566, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3229353401883505786, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6752,7 +6752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735101566025804490, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: orthographic size
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4735101566025804490, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -6801,6 +6801,18 @@ PrefabInstance:
     - target: {fileID: 7670339179163048049, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: m_Name
       value: CameraSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032150371008042013, guid: 20998b22932815847b8a92665eca539c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032150371008042013, guid: 20998b22932815847b8a92665eca539c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032150371008042013, guid: 20998b22932815847b8a92665eca539c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8674643003868576825, guid: 20998b22932815847b8a92665eca539c, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -6882,6 +6894,10 @@ PrefabInstance:
     - target: {fileID: 6416274888652883580, guid: 30a2836fed44cb4478d22e7711b31bf6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075601736635947572, guid: 30a2836fed44cb4478d22e7711b31bf6, type: 3}
+      propertyPath: initialCoins
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7128,7 +7144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5114114648192613571, guid: d1aa6d3ff5f8f214cae48e89733aeb98, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.73
+      value: -27.57
       objectReference: {fileID: 0}
     - target: {fileID: 5114114648192613571, guid: d1aa6d3ff5f8f214cae48e89733aeb98, type: 3}
       propertyPath: m_LocalPosition.z
