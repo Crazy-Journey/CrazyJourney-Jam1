@@ -24,7 +24,7 @@ public class PlayerStats : MonoBehaviour
         float power = PlayerDataManager.THIS.GetPlayer(playerId.GetPlayerId()).GetPower();
 
         damage = 20 + power;
-        maxLife = 200 + power*3;
+        maxLife =  200 + power*3;
         lifeRegen = 2 + power / 10;
 
         shootingComponent.SetBulletDamage(damage);
