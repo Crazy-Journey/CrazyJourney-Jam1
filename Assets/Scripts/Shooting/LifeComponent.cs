@@ -77,6 +77,10 @@ public class LifeComponent : MonoBehaviour
     {
         currentLife = maxlife;
         manager = GetComponent<PinataManager>();
+
+        playerAnimations = transform.GetChild(GetComponent<PlayerId>().GetPlayerId() == 0 ? 1 : 0).GetComponent<PlayerAnimations>();
+
+
         if (type == EntityType.Player)
         {
             if (playerId.GetPlayerId() == 0)

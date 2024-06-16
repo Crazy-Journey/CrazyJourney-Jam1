@@ -75,8 +75,8 @@ MonoBehaviour:
       powerDrop: 0
       coinDrop: 2
       speed: 2.2
-      minSpawnRate: 0.9
-      maxSpawnRate: 1.1
+      minSpawnRate: 2
+      maxSpawnRate: 3
   - enemyPower:
       maxEnemies: 3
       life: 200
@@ -95,20 +95,20 @@ MonoBehaviour:
       maxSpawnRate: 3
   - enemyPower:
       maxEnemies: 3
-      life: 200
+      life: 310
       powerDrop: 3
       coinDrop: 0
       speed: 2.2
-      minSpawnRate: 0.9
-      maxSpawnRate: 1.1
+      minSpawnRate: 2
+      maxSpawnRate: 3
     enemyCoin:
       maxEnemies: 3
-      life: 200
+      life: 310
       powerDrop: 0
       coinDrop: 5
       speed: 2.2
-      minSpawnRate: 0.9
-      maxSpawnRate: 1.1
+      minSpawnRate: 2
+      maxSpawnRate: 3
   - enemyPower:
       maxEnemies: 3
       life: 25
