@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -35,6 +37,11 @@ public class ElevatorComponent : MonoBehaviour
 
     [SerializeField]
     private GameObject colliderContainer;
+
+
+    public GameObject elevatorHint;
+    public TMP_Text  elevatorText;
+
 
     public void setMovingPlayer(Transform newMovingPlayer)
     {
@@ -106,6 +113,11 @@ public class ElevatorComponent : MonoBehaviour
         transition();
     }
 
+
+    private void Update()
+    {
+        elevatorText.text = floorCosts[currentFloor].ToString();
+    }
     IEnumerator MoveElevator()
     {
         colliderContainer.GetComponent<Collider2D>().isTrigger = true;
