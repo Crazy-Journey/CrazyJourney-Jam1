@@ -112,7 +112,8 @@ public class ElevatorComponent : MonoBehaviour
 
         float distance = pisos[currentFloor].GetElevatorHeightTarget() - transform.parent.position.y;
 
-        
+        StartCoroutine(Camera.main.GetComponent<CameraManager>().CameraShake(2, 4, 1));
+
         for (int i = 0; i < 50;i++)
         {
 

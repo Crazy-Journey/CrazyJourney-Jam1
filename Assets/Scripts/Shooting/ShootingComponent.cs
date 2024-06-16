@@ -80,8 +80,6 @@ public class ShootingComponent : MonoBehaviour
             newBullet.GetComponent<BulletComponent>().setOwner(OwnerObject);
             newBullet.GetComponent<BulletComponent>().setDamage(bulletDamage);
 
-            StartCoroutine(Camera.main.GetComponent<CameraManager>().CameraShake());
-
             SoundManager.instance.playSound((int)SoundManager.CLIPS.SHOOT_2);
 
 
