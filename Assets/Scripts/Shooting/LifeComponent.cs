@@ -45,6 +45,9 @@ public class LifeComponent : MonoBehaviour
     [SerializeField]
     private LayerMask elevatorMask;
 
+    [SerializeField]
+    private GameObject respawnVFX;
+
 
     [SerializeField]
     Transform raycastOrigin;
@@ -234,6 +237,11 @@ public class LifeComponent : MonoBehaviour
 
         SoundManager.instance.playSound((int)SoundManager.CLIPS.RESPAWN);
 
+        if (respawnVFX != null)
+        {
+            GameObject effect = Instantiate(respawnVFX, transform.position, Quaternion.identity) as GameObject;
+            Destroy(effect, 2f);
+        }
 
     }
 

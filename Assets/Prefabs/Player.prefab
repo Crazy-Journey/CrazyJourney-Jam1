@@ -273,6 +273,7 @@ MonoBehaviour:
   elevatorMask:
     serializedVersion: 2
     m_Bits: 1024
+  respawnVFX: {fileID: 3333527245032305894, guid: 96b818cd8ec3f6c49bef44b3955724a4, type: 3}
   raycastOrigin: {fileID: 6206839130079357285}
 --- !u!114 &6252476129644236724
 MonoBehaviour:
@@ -575,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a059e114b825f8498ad0617808042a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   objectRb: {fileID: 1084216011251414985}
 --- !u!1 &5032199304777654181
 GameObject:
@@ -1107,4 +1109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a059e114b825f8498ad0617808042a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   objectRb: {fileID: 1084216011251414985}
