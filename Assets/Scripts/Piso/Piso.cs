@@ -12,8 +12,7 @@ public class Piso : MonoBehaviour
 
     private void Awake()
     {
-        elevatorHeightTarget = transform.position.y;
-
+        elevatorHeightTarget = elevatorTarget.position.y;
     }
  
     public int GetId() { return id; }
