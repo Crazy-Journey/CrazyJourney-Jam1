@@ -12,9 +12,9 @@ public class CameraManager : MonoBehaviour
 { 
     [SerializeField] private CinemachineVirtualCamera vCam;
 
-    public IEnumerator CameraShake(float shakeIntensity = 3f, float shakeTiming = 0.2f)
+    public IEnumerator CameraShake(float shakeAmplitude = 1f, float shakeIntensity = 3f, float shakeTiming = 0.2f)
     {
-        Noise(1, shakeIntensity);
+        Noise(shakeAmplitude, shakeIntensity);
         yield return new WaitForSeconds(shakeTiming);
         Noise(0, 0);
     }

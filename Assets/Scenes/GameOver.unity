@@ -338,8 +338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals:
-  - {fileID: 1267326317}
   - {fileID: 496336728}
+  - {fileID: 1267326317}
   continueText: {fileID: 984884923}
 --- !u!4 &660768920
 Transform:

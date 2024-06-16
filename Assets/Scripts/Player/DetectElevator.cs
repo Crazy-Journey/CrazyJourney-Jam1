@@ -72,10 +72,8 @@ public class DetectElevator : MonoBehaviour
             transform.parent.position += new Vector3(2,0,0);
         else
             transform.parent.position += new Vector3(-2.5f,0,0);
-        print(transform.parent.position);
 
 
-        print("AAAA");
     }
 
     // Update is called once per frame
@@ -92,7 +90,15 @@ public class DetectElevator : MonoBehaviour
 
         }
 
-        detectElevator();   
+        detectElevator();
+
+  
+        if(lastElevator != null)
+        {
+            lastElevator.GetComponentInChildren<ElevatorComponent>().elevatorHint.SetActive(ElevatorDetected);
+        }
+        
+
     }
     private void detectElevator()
     {

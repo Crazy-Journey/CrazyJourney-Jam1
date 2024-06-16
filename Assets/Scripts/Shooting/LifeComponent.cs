@@ -103,7 +103,11 @@ public class LifeComponent : MonoBehaviour
         currentLife -= damage;
 
         if(playerAnimations != null)
-        playerAnimations.OnHit();
+        {
+            playerAnimations.OnHit();
+            StartCoroutine(Camera.main.GetComponent<CameraManager>().CameraShake(1, 3, 0.2f));
+        }
+        
 
         if (hpBar != null)
             hpBar.UpdateBar(currentLife, maxlife);
