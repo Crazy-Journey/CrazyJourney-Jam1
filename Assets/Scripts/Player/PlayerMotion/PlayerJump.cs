@@ -15,6 +15,12 @@ public class PlayerJump : MonoBehaviour
 
     public bool canJump;
 
+
+    private void Start()
+    {
+        playerAnimations = transform.parent.GetChild(GetComponentInParent<PlayerId>().GetPlayerId() == 0 ? 1 : 0).GetComponent<PlayerAnimations>();
+    }
+
     private void FixedUpdate()
     {
         if (Physics2D.Raycast(transform.position - Vector3.up * 0.1f, Vector3.down, 0.2f, LayerMask.GetMask("Floor", "FloorTilemap")))
