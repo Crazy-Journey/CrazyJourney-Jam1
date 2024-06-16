@@ -112,6 +112,11 @@ public class LifeComponent : MonoBehaviour
         {
             Die(bulletOwner);
         }
+
+        else if (type == EntityType.Player)
+        {
+
+        }
     }
 
     private void Die(GameObject bulletOwner)

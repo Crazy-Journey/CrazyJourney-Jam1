@@ -38,8 +38,6 @@ public class InputReady : MonoBehaviour
             panelReady2.SetActive(false);
             PlayersReady = true;        
         }
-
-
     }
 
 
