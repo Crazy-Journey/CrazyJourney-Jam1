@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public static GameManager THIS;
     public GameStates currentState;
 
+    public int winnerwinnerChickenDinner;
+
     private void Awake()
     {
         // Uso de singleton

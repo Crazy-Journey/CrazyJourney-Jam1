@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2501904532840395033}
+  - {fileID: 756928933835227469}
   - {fileID: 2963194737022611}
   - {fileID: 1709142016396382950}
   - {fileID: 3754331475949322870}
@@ -354,7 +355,7 @@ GameObject:
   - component: {fileID: 5633135769174433805}
   - component: {fileID: 8007357442141791480}
   - component: {fileID: 1237835892110104335}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +843,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5633135769174433805}
-  m_Father: {fileID: 2501904532840395033}
+  m_Father: {fileID: 458334553935022814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &7223111106826438103
 Grid:
@@ -852,7 +853,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4656508323460105027}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 0.5, y: 0.5, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -920,7 +921,6 @@ Transform:
   - {fileID: 7301148940512459127}
   - {fileID: 8513245545889491503}
   - {fileID: 6818695359722174903}
-  - {fileID: 756928933835227469}
   m_Father: {fileID: 458334553935022814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8558357208397097817
