@@ -817,7 +817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectRb: {fileID: 1084216011251414985}
   playerAnimations: {fileID: 6547147584867639825}
-  jumpForce: 10
+  jumpForce: 12
   debugInfo: 0
   canJump: 1
 --- !u!1 &7150139609770997052
