@@ -65,6 +65,7 @@ public class ElevatorComponent : MonoBehaviour
     public void BajarPiso()
     {
         currentFloor += 1;
+
         transition();
     }
 
@@ -109,45 +110,47 @@ public class ElevatorComponent : MonoBehaviour
             pisos.Add(PisosContainer.GetChild(i).gameObject.GetComponent<Piso>());
         }
 
-
+        
         transition();
     }
 
 
     private void Update()
     {
-        elevatorText.text = floorCosts[currentFloor].ToString();
+        if (currentFloor < pisos.Count)
+            elevatorText.text = floorCosts[currentFloor].ToString();
     }
     IEnumerator MoveElevator()
     {
-        colliderContainer.GetComponent<Collider2D>().isTrigger = true;
+        if (pisos.Count <= currentFloor) yield break;
+        Piso p = pisos[currentFloor];
+        if (p == null) yield break;
 
-        float distance = pisos[currentFloor].GetElevatorHeightTarget() - transform.parent.position.y;
+        float distance = p.GetElevatorHeightTarget() - transform.parent.position.y;
+
+        colliderContainer.GetComponent<Collider2D>().isTrigger = true;
 
         StartCoroutine(Camera.main.GetComponent<CameraManager>().CameraShake(2, 4, 1));
 
-        for (int i = 0; i < 50;i++)
-        {
+        for (int i = 0; i < 50; i++) {
 
-            transform.parent.position +=  new Vector3( 0,distance / 50,0);  
+            transform.parent.position += new Vector3(0, distance / 50, 0);
 
-            if(movingPlayer != null)
-            {
-                movingPlayer.position +=  new Vector3( 0,distance / 50,0);  
+            if (movingPlayer != null) {
+                movingPlayer.position += new Vector3(0, distance / 50, 0);
 
             }
-         
+
             yield return new WaitForSecondsRealtime(0.01f);
         }
 
 
-        if(playerDetectElevator != null)
-        {
+        if (playerDetectElevator != null) {
             playerDetectElevator.ExitElevator();
         }
 
 
-        movingPlayer = null;    
+        movingPlayer = null;
         playerDetectElevator = null;
         isMoving = false;
 

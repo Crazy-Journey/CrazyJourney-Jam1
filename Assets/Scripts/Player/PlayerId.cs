@@ -7,15 +7,20 @@ public class PlayerId : MonoBehaviour
 {
     public static int nextId;
 
+    public static bool canConnect = true;
+
     public int playerId;
 
     private void Awake()
     {
-        if (nextId >= 2)
+        if (nextId >= 2 || !canConnect)
         {
             Destroy(gameObject);
             return;
         }
+
+        StartCoroutine(ConectionCoroutine());
+
         playerId = nextId;
         nextId++;
     }
@@ -28,4 +33,13 @@ public class PlayerId : MonoBehaviour
     public void ResetIds() {
         nextId = 0;
     }
+
+    IEnumerator ConectionCoroutine() {
+        canConnect = false;
+        yield return new WaitForSeconds(0.1f);
+        canConnect = true;
+
+    }
+
+    public bool CanConnect() { return canConnect; }
 }

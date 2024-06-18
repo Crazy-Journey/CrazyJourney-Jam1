@@ -2196,6 +2196,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 655154235169362129, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
+      propertyPath: Nfloors
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 655154235169362129, guid: 6e5c0d3c69a87444587cc159a4b230cc, type: 3}
       propertyPath: elevatorHint
       value: 
       objectReference: {fileID: 1256520984}
@@ -8218,7 +8222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7075601736635947572, guid: 30a2836fed44cb4478d22e7711b31bf6, type: 3}
       propertyPath: initialCoins
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

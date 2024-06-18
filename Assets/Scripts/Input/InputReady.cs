@@ -32,9 +32,12 @@ public class InputReady : MonoBehaviour
 
     public void PlayerConnected(PlayerInput input)
     {
-        count++;    
+        PlayerId pId = Object.FindObjectOfType<PlayerId>();
+        if (pId != null && !pId.CanConnect()) return;
 
-        if(count == 1)
+        count++;
+
+        if (count == 1)
         {
             panelReady1.SetActive(false);
         }
@@ -45,21 +48,5 @@ public class InputReady : MonoBehaviour
             PlayersReady = true;        
         }
     }
-
-    public void ResetInputManager() {
-        //playerInputManager.DisableJoining();
-        //playerInputManager.EnableJoining();
-
-        //foreach (var player in GameObject.FindGameObjectsWithTag("Player")) {
-        //    Destroy(player);
-        //}
-
-        //PlayerPrefs.DeleteAll();
-
-        //foreach (var device in InputSystem.devices) {
-        //    InputSystem.RemoveDevice(device);
-        //}
-    }
-
 
 }
