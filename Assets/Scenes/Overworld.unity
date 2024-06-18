@@ -34749,6 +34749,74 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -14.96
       objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[0].enemyCoin.life
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[1].enemyCoin.life
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[2].enemyCoin.life
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[3].enemyCoin.life
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[0].enemyPower.life
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[1].enemyPower.life
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[2].enemyPower.life
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[3].enemyPower.life
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[0].enemyCoin.coinDrop
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[1].enemyCoin.coinDrop
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[2].enemyCoin.coinDrop
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[3].enemyCoin.coinDrop
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[0].enemyPower.powerDrop
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[1].enemyPower.powerDrop
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[2].enemyPower.powerDrop
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101143606676795556, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
+      propertyPath: pisosData.Array.data[3].enemyPower.powerDrop
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3292151107396092300, guid: 73eab5b3aea4f744996cc659a2e93930, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.9676
