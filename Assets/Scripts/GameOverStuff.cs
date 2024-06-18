@@ -16,7 +16,7 @@ public class GameOverStuff : MonoBehaviour
 
     private IEnumerator ShowBackButton()
     {
-        yield return new WaitForSecondsRealtime(4f);
+        yield return new WaitForSecondsRealtime(2f);
 
         int a = 0;
 

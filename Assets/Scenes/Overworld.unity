@@ -9282,7 +9282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7075601736635947572, guid: 30a2836fed44cb4478d22e7711b31bf6, type: 3}
       propertyPath: initialCoins
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

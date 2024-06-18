@@ -27,6 +27,8 @@ public class InputReady : MonoBehaviour
 
 
         playerInputManager = GetComponent<PlayerInputManager>();
+
+        StartCoroutine(InitialInputDisabled());
     }
 
 
@@ -47,6 +49,13 @@ public class InputReady : MonoBehaviour
             panelReady2.SetActive(false);
             PlayersReady = true;        
         }
+    }
+
+    IEnumerator InitialInputDisabled() {
+        playerInputManager.enabled = false;
+        yield return new WaitForSeconds(1f);
+        playerInputManager.enabled = true;
+        playerInputManager.EnableJoining();
     }
 
 }
