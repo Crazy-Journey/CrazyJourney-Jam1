@@ -15,12 +15,18 @@ public class InputReady : MonoBehaviour
     public GameObject panelReady1;
     public GameObject panelReady2;
 
+
+    private PlayerInputManager playerInputManager;
+
     private void Awake()
     {
         if(instance == null)
         instance = this;  
         else
             Destroy(this);
+
+
+        playerInputManager = GetComponent<PlayerInputManager>();
     }
 
 
@@ -38,6 +44,21 @@ public class InputReady : MonoBehaviour
             panelReady2.SetActive(false);
             PlayersReady = true;        
         }
+    }
+
+    public void ResetInputManager() {
+        //playerInputManager.DisableJoining();
+        //playerInputManager.EnableJoining();
+
+        //foreach (var player in GameObject.FindGameObjectsWithTag("Player")) {
+        //    Destroy(player);
+        //}
+
+        //PlayerPrefs.DeleteAll();
+
+        //foreach (var device in InputSystem.devices) {
+        //    InputSystem.RemoveDevice(device);
+        //}
     }
 
 

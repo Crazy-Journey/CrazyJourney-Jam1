@@ -42,7 +42,8 @@ public class DetectElevator : MonoBehaviour
     {
         actionMap = actionMapContainer.GetComponent<PlayerInput>().currentActionMap;
 
-        actionMap.Disable();
+        if(actionMap != null)
+            actionMap.Disable();
     }
 
     private void Start()
@@ -66,8 +67,6 @@ public class DetectElevator : MonoBehaviour
         PlayerDataManager.THIS.SetPlayer(playerId.GetPlayerId(), data);
 
 
-
-        print(transform.position);
         if(transform.parent.position.x <= 0)
             transform.parent.position = lastElevator.transform.position + new Vector3(2,0,0);
         else
@@ -147,8 +146,6 @@ public class DetectElevator : MonoBehaviour
 
             elevatorComponent.startMoving();
 
-
-            print("entra ascensor");
             isInElevator = true;
 
             //desactivar input

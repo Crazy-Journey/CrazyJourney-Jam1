@@ -78,7 +78,6 @@ public class PlayerDataManager : MonoBehaviour
         if (THIS == null)
         {
             THIS = this;
-            DontDestroyOnLoad(gameObject);
         }
         else{
             Destroy(gameObject);
@@ -103,10 +102,7 @@ public class PlayerDataManager : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log("Player 1 Power: " + playerData[0].GetPower());
-        //Debug.Log("Player 1 Coins: " + playerData[0].GetCoins());
-        //Debug.Log("Player 2 Power: " + playerData[1].GetPower());
-        //Debug.Log("Player 2 Coins: " + playerData[1].GetCoins());
+
     }
 
 

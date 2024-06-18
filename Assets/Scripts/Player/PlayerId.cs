@@ -24,4 +24,8 @@ public class PlayerId : MonoBehaviour
     {
         return playerId;
     }
+
+    public void ResetIds() {
+        nextId = 0;
+    }
 }
