@@ -41,11 +41,9 @@ public class PlayerAnimations : MonoBehaviour
     }
 
     public void OnHit()
-    {
-        
+    { 
         if(!animator.GetBool("Death"))
         {
-            print("aa");
             animator.SetTrigger("Hit");
         }
             

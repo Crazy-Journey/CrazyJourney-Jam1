@@ -246,7 +246,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_TargetDisplay: 0
 --- !u!114 &8214925719763041703
 MonoBehaviour:
@@ -361,7 +361,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1793450735, guid: 5fc78be81ca637f488e8539727b793c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -648,3 +648,8 @@ MonoBehaviour:
   playerId: {fileID: 0}
   playerAnimations: {fileID: 0}
   actionMapContainer: {fileID: 0}
+  elevatorMask:
+    serializedVersion: 2
+    m_Bits: 0
+  respawnVFX: {fileID: 0}
+  raycastOrigin: {fileID: 0}

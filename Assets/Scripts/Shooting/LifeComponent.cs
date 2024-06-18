@@ -77,11 +77,9 @@ public class LifeComponent : MonoBehaviour
     {
         currentLife = maxlife;
         manager = GetComponent<PinataManager>();
+
         if (type == EntityType.Player)
             playerAnimations = transform.GetChild(GetComponent<PlayerId>().GetPlayerId() == 0 ? 1 : 0).GetComponent<PlayerAnimations>();
-
-        //if (playerAnimations == null && type == EntityType.Player)
-        //    playerAnimations = transform.GetChild(GetComponent<PlayerId>().GetPlayerId()).GetComponent<PlayerAnimations>();
 
 
         if (type == EntityType.Player)
@@ -157,19 +155,6 @@ public class LifeComponent : MonoBehaviour
             _player.ChangePower(+manager.powerDrop);
             _player.ChangeCoins(+manager.coinDrop);
 
-            // Actualizamos UI del jugador
-            /* if (bulletOwnerId == 0)
-            {
-                GameObject.Find("CoinsText1").GetComponent<TMP_Text>().text = _player.GetCoins().ToString();
-                GameObject.Find("PowerText1").GetComponent<TMP_Text>().text = _player.GetPower().ToString();
-            }
-
-            else if (bulletOwnerId == 1)
-            {
-                GameObject.Find("CoinsText2").GetComponent<TMP_Text>().text = _player.GetCoins().ToString();
-                GameObject.Find("PowerText2").GetComponent<TMP_Text>().text = _player.GetPower().ToString();
-            } */
-
             PlayerDataManager.THIS.SetPlayer(bulletOwnerId, _player);
             Destroy(gameObject);
         }
@@ -201,9 +186,6 @@ public class LifeComponent : MonoBehaviour
         GetComponent<CapsuleCollider2D>().size = new Vector2(0.9f, 0.9f);
 
         playerAnimations.OnRespawn();
-
-        //Subimos el ascensor de pisos
-        //GameObject elevator = GetComponentInChildren<DetectElevator>().lastElevator;
 
         GameObject elevator = getElevatorInFloor();
 
