@@ -41,10 +41,15 @@ public class ShootingComponent : MonoBehaviour
     [SerializeField]
     PlayerId playerId;
 
+    [SerializeField]
+    bool usingMouse = true;
+    Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
+
         myTransform = transform;          
 
         if(playerId.GetPlayerId() == 0)
@@ -63,6 +68,10 @@ public class ShootingComponent : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
 
+        if (usingMouse) {
+            shootDir = (cam.ScreenToWorldPoint(Input.mousePosition) - SpawnPoint.position).normalized;
+            FlipX(shootDir);
+        }
 
         if (shooting  &&  elapsedTime >= fireRate)
         {
@@ -93,12 +102,13 @@ public class ShootingComponent : MonoBehaviour
 
     public void Look(InputAction.CallbackContext context)
     {
+        if (usingMouse) usingMouse = false;
+
         if(context.ReadValue<Vector2>() != new Vector2(0, 0))
         {
             shootDir = context.ReadValue<Vector2>();
             FlipX(shootDir);
         }
-
     }
 
     public void SetBulletDamage(float dmg)

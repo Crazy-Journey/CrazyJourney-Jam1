@@ -13,6 +13,7 @@ public class PlayerId : MonoBehaviour
 
     private void Awake()
     {
+        print("a");
         if (nextId >= 2 || !canConnect)
         {
             Destroy(gameObject);

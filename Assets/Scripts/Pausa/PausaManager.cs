@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PausaManager : MonoBehaviour
 {
 
@@ -11,6 +12,8 @@ public class PausaManager : MonoBehaviour
 
     public GameObject HudInGame;
     public GameObject HudPause;
+
+    [SerializeField] Button firstSelected;
 
 
     bool pause = false;
@@ -21,6 +24,12 @@ public class PausaManager : MonoBehaviour
             instance = this;
         else 
             Destroy(gameObject);
+
+       print(PlayerId.nextId);
+    }
+
+    private void Update() {
+        print(PlayerId.canConnect);
     }
 
     public void swicthPause(InputAction.CallbackContext context)
@@ -39,8 +48,17 @@ public class PausaManager : MonoBehaviour
 
         HudInGame.SetActive(!HudInGame.activeInHierarchy);
         HudPause.SetActive(!HudPause.activeInHierarchy);
-        
+
+        if (pause) firstSelected.Select();
     }
 
+    public void ResetIdOnExit() {
+        PlayerId pId = Object.FindObjectOfType<PlayerId>();
+        if (pId != null)
+            pId.ResetIds();
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
 
 }

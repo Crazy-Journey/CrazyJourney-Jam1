@@ -7,21 +7,21 @@ public class MainMenu : MonoBehaviour
 {
     public void GoToMainMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadScene(0);
     }
     public void GoToTutorial()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene(1);
     }
 
     public void GoToOverworld()
     {
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadScene(2);
     }
 
     public void GoToCredits()
     {
-        SceneManager.LoadSceneAsync(4);
+        SceneManager.LoadScene(4);
     }
 
     public void ExitGame()
