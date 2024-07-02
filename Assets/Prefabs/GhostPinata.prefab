@@ -423,6 +423,9 @@ MonoBehaviour:
   powerDrop: 0
   coinDrop: 3
   particleEffect: {fileID: 8961178232074331139, guid: d996fec4b268b4042bb682780862bd84, type: 3}
+  scoreVisual: {fileID: 4515682408453766942, guid: 90160642c33b55c46a12d39505e5032c, type: 3}
+  spriteCoin: {fileID: -1058289722, guid: a19513162d1f1344db97ed8554c5c863, type: 3}
+  spritePower: {fileID: 21300000, guid: 18dea264c758c8d4886b2688b5442767, type: 3}
 --- !u!114 &-4712282985160488391
 MonoBehaviour:
   m_ObjectHideFlags: 0
